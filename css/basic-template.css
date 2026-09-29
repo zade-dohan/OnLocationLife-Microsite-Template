@@ -1,0 +1,15 @@
+.site-header {
+  padding: 16px 24px;
+}
+
+.site-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.site-footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}

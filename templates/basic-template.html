@@ -1,0 +1,65 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Basic Template
+-->
+<!doctype html>
+<html>
+  <head>
+    {{ standard_header_includes }}
+    <title>{{ page_meta.html_title }}</title>
+    {{ require_css(get_asset_url('../css/basic-template.css')) }}
+  </head>
+  <body class="{{ body_css }}">
+
+    {% block header %}
+      <header class="site-header">
+        {% dnd_area "header" %}
+          {% dnd_row %}
+            {% dnd_column %}
+              {% dnd_module path="@hubspot/logo" %}
+              {% end_dnd_module %}
+              {% dnd_module path="@hubspot/menu" %}
+              {% end_dnd_module %}
+            {% end_dnd_column %}
+          {% end_dnd_row %}
+        {% end_dnd_area %}
+      </header>
+    {% endblock %}
+
+    {% block body %}
+      <main class="site-main">
+        {% dnd_area "main_content" %}
+          {% dnd_row %}
+            {% dnd_column %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <h1>Welcome</h1>
+                  <p>This is a basic HubSpot page template. Add and rearrange modules here in the content editor.</p>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_column %}
+          {% end_dnd_row %}
+        {% end_dnd_area %}
+      </main>
+    {% endblock %}
+
+    {% block footer %}
+      <footer class="site-footer">
+        {% dnd_area "footer" %}
+          {% dnd_row %}
+            {% dnd_column %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <p>&copy; {{ site_settings.company_name }} {{ "now"|datetimeformat("%Y") }}</p>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_column %}
+          {% end_dnd_row %}
+        {% end_dnd_area %}
+      </footer>
+    {% endblock %}
+
+    {{ standard_footer_includes }}
+  </body>
+</html>
