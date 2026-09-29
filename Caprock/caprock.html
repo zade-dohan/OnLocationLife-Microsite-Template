@@ -1,0 +1,667 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: true
+-->
+<!DOCTYPE html>
+{{ standard_header_includes }}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An elevated workforce community in Mobeetie, Texas, designed for comfort, connection, and life on site." />
+  <title>Caprock | Discover Life at Caprock</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Caprock | Discover Life at Caprock" />
+  <meta property="og:description" content="An elevated workforce community in Mobeetie, Texas, designed for comfort, connection, and life on site." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!--
+  ============================================================
+  ASSET PATHS — UPDATE BEFORE UPLOADING TO HUBSPOT
+  ============================================================
+  Fonts:      Upload OTF files to HubSpot File Manager under
+              /caprock/fonts/ and update the @font-face src URLs.
+
+  Images:     Upload images to HubSpot File Manager under
+              /caprock/images/ and update the src/background-image
+              references throughout.
+
+  Source images (from Astro project):
+    Hero bg        → src/assets/images/AdobeStock.jpeg
+    Amenities bg   → src/assets/images/sample-images/41171235363574b777c8f2f1e8daf86ad0b99d01-1200x800.webp
+    Housing        → src/assets/images/sample-images/5c44868359773af0ba2f990a2d7858cf.jpg
+    Dining         → src/assets/images/sample-images/c7c493ea99ee39aff6454dcc5196b3ff.jpg
+    CTA bg         → src/assets/images/sample-images/ram-rodeo-yun-wang.jpg
+    Logo           → src/assets/logos/Caprock-Secondary-4C.png
+    Emblem white   → src/assets/logos/Caprock-Emblem-Iso-white.png
+  ============================================================
+  -->
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a class="skip" href="#main" aria-label="skip to main content">Skip to main content</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="cs-navigation">
+    <div class="cap-nav-inner">
+      <a href="#" class="cap-logo" aria-label="Caprock — back to home">
+        <img
+          src="{{ get_asset_url('/Caprock/images/Caprock-Secondary-4C.png') }}"
+          alt="Caprock"
+          width="480"
+          height="120"
+          decoding="async"
+          loading="eager"
+        />
+      </a>
+
+      <nav class="cap-nav" aria-label="Primary">
+        <button
+          class="cap-toggle"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="cap-nav-menu"
+          aria-label="Toggle menu"
+        >
+          <span class="cap-toggle-line" aria-hidden="true"></span>
+          <span class="cap-toggle-line" aria-hidden="true"></span>
+          <span class="cap-toggle-line" aria-hidden="true"></span>
+        </button>
+
+        <div class="cap-nav-panel">
+          <ul id="cap-nav-menu" class="cap-nav-list">
+            <li><a href="#cap-intro" class="cap-nav-link">About</a></li>
+            <li><a href="#cap-life-on-site" class="cap-nav-link">Life On Site</a></li>
+            <li><a href="#cap-housing" class="cap-nav-link">Housing</a></li>
+            <li><a href="#cap-contact" class="cap-nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="cap-hero" class="cap-hero">
+      <div class="cap-hero-bg" aria-hidden="true">
+       <img
+          src="{{ get_asset_url('/Caprock/images/AdobeStock.jpeg') }}"
+          alt=""
+          width="2000"
+          height="1333"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div class="cap-hero-scrim" aria-hidden="true"></div>
+      <div class="cap-hero-content cap-container">
+        <img
+          src="{{ get_asset_url('/Caprock/images/Caprock-Emblem-Iso-white.png') }}"
+          alt=""
+          width="72"
+          height="72"
+          class="cap-hero-emblem"
+          aria-hidden="true"
+          loading="eager"
+        />
+        <span class="cap-eyebrow cap-hero-eyebrow">Mobeetie, Texas</span>
+        <h1 class="cap-hero-title">Discover Life at Caprock</h1>
+        <p class="cap-sub cap-hero-sub">An Elevated Workforce Community</p>
+        <p class="cap-hero-intro">Built for people powering progress, Caprock is designed to provide a comfortable, connected, and convenient living experience while working on site.</p>
+        <div class="cap-hero-ctas">
+          <a href="#cap-life-on-site" class="cap-btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO ===================== -->
+    <section id="cap-intro" class="cap-section cap-section--light">
+      <div class="cap-container cap-intro-grid">
+        <div class="cap-intro-head">
+          <span class="cap-eyebrow">About</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">More than workforce housing.</h2>
+        </div>
+        <div class="cap-intro-body">
+          <p class="cap-lead">Caprock is a welcoming, service-driven community designed to help guests recharge, connect, and feel supported throughout their stay.</p>
+          <p>From modern single-occupancy accommodations to energizing recreation spaces and a variety of dining options, every aspect of the community is thoughtfully designed to support your daily life, wellbeing, and sense of connection.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VIDEO ===================== -->
+    <section class="cap-section cap-section--dark cap-video-section">
+      <div class="cap-container">
+        <header class="cap-section-head">
+          <span class="cap-eyebrow">Experience Caprock</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">See life on site.</h2>
+        </header>
+        <div class="cap-video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/1207925880?h=eb624d0693&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen
+            title="Caprock Workforce Housing"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AMENITIES ===================== -->
+    <section
+      id="cap-life-on-site"
+      class="cap-section cap-amenities-parallax"
+      style="--amenities-bg: url({{ get_asset_url('/Caprock/images/41171235363574b777c8f2f1e8daf86ad0b99d01-1200x800.jpg') }})"
+    >
+      <div class="cap-amenities-overlay" aria-hidden="true"></div>
+      <div class="cap-container cap-amenities-content">
+        <header class="cap-section-head">
+          <span class="cap-eyebrow">Life on Site</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">Designed for the whole day.</h2>
+          <p class="cap-section-intro">After the workday, stay active, share a meal with coworkers, or take time to reset. Every experience is built around comfort, convenience, and connection.</p>
+        </header>
+
+        <ul class="cap-amenities-grid">
+          <li class="cap-amenity">
+            <span class="cap-amenity-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 4v16"/>
+                <path d="M2 8h18a2 2 0 0 1 2 2v6H2"/>
+                <path d="M2 14h20"/>
+                <path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
+              </svg>
+            </span>
+            <h3 class="cap-h3">Single Occupancy Rooms</h3>
+            <p>Private, fully furnished rooms with climate control and Wi-Fi. Weekly housekeeping services available to guests.</p>
+          </li>
+          <li class="cap-amenity">
+            <span class="cap-amenity-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+                <path d="M7 2v20"/>
+                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+              </svg>
+            </span>
+            <h3 class="cap-h3">On-Site Dining</h3>
+            <p>Freshly prepared meals, grab-and-go, and food trucks. Coffee Bar and Barbeque Kitchen coming soon.</p>
+          </li>
+          <li class="cap-amenity">
+            <span class="cap-amenity-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="1"/>
+                <path d="M16 8h4l3 5v3h-7V8z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </span>
+            <h3 class="cap-h3">Transportation Services</h3>
+            <p>Reliable transportation services to and from your work site.</p>
+          </li>
+          <li class="cap-amenity">
+            <span class="cap-amenity-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <h3 class="cap-h3">Guest &amp; Security Services</h3>
+            <p>Caprock supports 24/7 on site guest services and security.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== COMING SOON ===================== -->
+    <section class="cap-section cap-section--light cap-coming-soon">
+      <div class="cap-container">
+        <header class="cap-section-head">
+          <span class="cap-eyebrow">Coming Soon</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">Coming Soon</h2>
+        </header>
+        <ul class="cap-coming-soon-grid">
+          <li class="cap-coming-soon-item">
+            <h3 class="cap-h3">Recreation and Fitness Center</h3>
+            <p>Soccer fields, pickleball, basketball, and golf simulator.</p>
+          </li>
+          <li class="cap-coming-soon-item">
+            <h3 class="cap-h3">RV Parking</h3>
+            <p>Full-service RV parking with access to every amenity.</p>
+          </li>
+          <li class="cap-coming-soon-item">
+            <h3 class="cap-h3">Retail and Convenience Stores</h3>
+            <p>Everyday essentials available anytime, day or night.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== COMMUNITY CODE OF CONDUCT ===================== -->
+    <section class="cap-section cap-section--dark cap-conduct">
+      <div class="cap-container">
+        <header class="cap-section-head">
+          <span class="cap-eyebrow">Life on Site</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">Community Code of Conduct</h2>
+          <p class="cap-section-intro">At Caprock, we're committed to fostering a community where every guest feels respected, safe, and at home. Our Community Guidelines reflect the shared values that make that possible: care for one another, care for our shared spaces, and a spirit of cooperation throughout your stay.</p>
+        </header>
+
+        <div class="cap-accordion">
+
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-trigger" aria-expanded="false" aria-controls="conduct-1">
+              <span class="cap-accordion-label">Respect &amp; Behavior</span>
+              <span class="cap-accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="cap-accordion-panel" id="conduct-1">
+              <ul class="cap-conduct-list">
+                <li>Occupants must behave in an orderly, respectful manner at all times.</li>
+                <li>Respect others' <strong>rights, safety, and privacy</strong> and avoid inappropriate conduct.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-trigger" aria-expanded="false" aria-controls="conduct-2">
+              <span class="cap-accordion-label">Care for Community</span>
+              <span class="cap-accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="cap-accordion-panel" id="conduct-2">
+              <ul class="cap-conduct-list">
+                <li>Keep all areas <strong>clean and well-maintained</strong>.</li>
+                <li>Treat facilities and property with care.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-trigger" aria-expanded="false" aria-controls="conduct-3">
+              <span class="cap-accordion-label">Cooperation</span>
+              <span class="cap-accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="cap-accordion-panel" id="conduct-3">
+              <ul class="cap-conduct-list">
+                <li>Follow directions and cooperate with <strong>management, security, and authorized staff</strong>.</li>
+                <li>Report any issues or concerns promptly to management.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-trigger" aria-expanded="false" aria-controls="conduct-4">
+              <span class="cap-accordion-label">Zero Tolerance for Harassment &amp; Discrimination</span>
+              <span class="cap-accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="cap-accordion-panel" id="conduct-4">
+              <ul class="cap-conduct-list">
+                <li>Harassment or discrimination is strictly prohibited based on protected characteristics (race, gender, religion, disability, etc.).</li>
+                <li>All reports are investigated thoroughly.</li>
+                <li>Violators may face <strong>discipline up to removal from housing and employer notification</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cap-accordion-item">
+            <button class="cap-accordion-trigger" aria-expanded="false" aria-controls="conduct-5">
+              <span class="cap-accordion-label">Protection Against Retaliation</span>
+              <span class="cap-accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="cap-accordion-panel" id="conduct-5">
+              <ul class="cap-conduct-list">
+                <li>Individuals who report concerns or participate in investigations in good faith are <strong>protected from retaliation</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===================== HOUSING (Split) ===================== -->
+    <section id="cap-housing" class="cap-section cap-section--light cap-split">
+      <div class="cap-container cap-split-grid">
+        <div class="cap-split-media cap-carousel" aria-label="Housing accommodations gallery">
+          <div class="cap-carousel-track">
+            <div class="cap-carousel-slide">
+              <img
+                src="{{ get_asset_url('/Caprock/images/KimleyHorn_CaprockWorkforceHousing_View_01_SportsCourts_052126.jpg') }}"
+                alt="Caprock sports courts and recreation"
+                width="800"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="cap-carousel-slide">
+              <img
+                src="{{ get_asset_url('/Caprock/images/KimleyHorn_CaprockWorkforceHousing_View_02_parks_052126.jpg') }}"
+                alt="Caprock parks and outdoor spaces"
+                width="800"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="cap-carousel-slide">
+              <img
+                src="{{ get_asset_url('/Caprock/images/KimleyHorn_CaprockWorkforceHousing_View_03_TopDown_052126.jpg') }}"
+                alt="Caprock aerial view of the community"
+                width="800"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <button class="cap-carousel-btn cap-carousel-btn--prev" aria-label="Previous image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="cap-carousel-btn cap-carousel-btn--next" aria-label="Next image">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="cap-carousel-dots" role="tablist" aria-label="Slide controls">
+            <button class="cap-carousel-dot cap-carousel-dot--active" role="tab" aria-selected="true" aria-label="Slide 1" data-index="0"></button>
+            <button class="cap-carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-index="1"></button>
+            <button class="cap-carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3" data-index="2"></button>
+          </div>
+        </div>
+        <div class="cap-split-body">
+          <span class="cap-eyebrow">Housing &amp; Accommodations</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">Modern spaces. Built for the long stay.</h2>
+          <p class="cap-lead">Thoughtfully designed for extended stays and workforce living, our accommodations support both rest and productivity — so guests can settle in, recharge, and feel at home.</p>
+          <ul class="cap-feature-list">
+            <li>Private Single Occupancy</li>
+            <li>Wi-Fi &amp; Climate Control</li>
+            <li>Shared Social Spaces</li>
+            <li>Fully Furnished Rooms</li>
+            <li>On-Site Dining Services</li>
+            <li>Weekly Housekeeping Service</li>
+            <li>Self Service Laundry</li>
+            <li>Package &amp; Mail Service</li>
+            <li>Convenience Store</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DINING (Split Reverse) ===================== -->
+    <section class="cap-section cap-section--light cap-split cap-split--reverse">
+      <div class="cap-container cap-split-grid">
+        <div class="cap-split-media">
+          <img
+            src="{{ get_asset_url('/Caprock/images/c7c493ea99ee39aff6454dcc5196b3ff.jpg') }}"
+            alt="On-site dining at Caprock"
+            width="800"
+            height="1000"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="cap-split-body">
+          <span class="cap-eyebrow">Dining</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-h2">Meals built around every shift.</h2>
+          <p class="cap-lead">Breakfast before an early shift, dinner with coworkers, or a quick bite between schedules — dining at Caprock is built to support every part of the day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section
+      id="cap-contact"
+      class="cap-cta-new"
+      style="--cta-bg: url({{ get_asset_url('/Caprock/images/ram-rodeo-yun-wang.jpg') }})"
+    >
+      <!-- UPDATE: Replace ./images/cta-bg.jpg with HubSpot URL for ram-rodeo-yun-wang.jpg -->
+      <div class="cap-cta-overlay" aria-hidden="true"></div>
+      <div class="cap-container cap-cta-grid">
+
+        <!-- Messaging -->
+        <div class="cap-cta-messaging">
+          <img
+            src="{{ get_asset_url('/Caprock/images/Caprock-Emblem-Iso-white.png') }}"
+            alt=""
+            width="72"
+            height="72"
+            class="cap-cta-emblem"
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="cap-eyebrow cap-cta-eyebrow">Get In Touch</span>
+          <span class="cap-rule"></span>
+          <h2 class="cap-cta-title">Ready to call Caprock home?</h2>
+          <p class="cap-cta-sub">Questions about Caprock? We're here to help.</p>
+          <div class="cap-cta-btns">
+            <a href="mailto:Caprock-Information@aramark.com" class="cap-btn">Contact For General Information</a>
+          </div>
+        </div>
+
+        <!-- Contact card -->
+        <div class="cap-cta-contact">
+          <div class="cap-cta-contact-item">
+            <span class="cap-cta-contact-label">Email</span>
+            <a href="mailto:Caprock-Information@aramark.com" class="cap-cta-contact-value">Caprock-Information@aramark.com</a>
+          </div>
+          <div class="cap-cta-divider" aria-hidden="true"></div>
+          <div class="cap-cta-contact-item">
+            <span class="cap-cta-contact-label">Visit</span>
+            <a
+              href="https://maps.google.com/?q=14585+Highway+152+Mobeetie+TX+79061"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cap-cta-contact-value"
+            >
+              14585 Highway 152<br />
+              Mobeetie, TX 79061
+            </a>
+          </div>
+          <div class="cap-cta-divider" aria-hidden="true"></div>
+          <div class="cap-cta-contact-item">
+            <span class="cap-cta-contact-label">Work at Caprock</span>
+            <a
+              href="https://careers.aramark.com/search/?keyword=caprock&location="
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cap-cta-contact-value"
+            >View Open Roles Here</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- /#main -->
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="cap-footer">
+    <div class="cap-footer-inner">
+      <div class="cap-footer-brand">
+        <a class="cap-footer-logo" href="#" aria-label="Caprock — home">
+          <img
+            src="{{ get_asset_url('/Caprock/images/Caprock-Secondary-4C.png') }}"
+            alt="Caprock"
+            width="480"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <p class="cap-footer-tagline">An elevated workforce community designed for comfort, connection, and life on site.</p>
+        <div class="cap-footer-powered">
+          <span class="cap-footer-powered-label">Managed by</span>
+          <img
+            src="{{ get_asset_url('/Caprock/images/nexuslogowhite.png') }}"
+            alt="Aramark"
+            width="1756"
+            height="447"
+            class="cap-footer-aramark-logo"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <div class="cap-footer-cols">
+        <section class="cap-footer-col">
+          <h2 class="cap-footer-heading">Explore</h2>
+          <ul>
+            <li><a href="#cap-intro">About</a></li>
+            <li><a href="#cap-life-on-site">Life On Site</a></li>
+            <li><a href="#cap-housing">Housing</a></li>
+            <li><a href="#cap-contact">Contact</a></li>
+          </ul>
+        </section>
+
+        <section class="cap-footer-col">
+          <h2 class="cap-footer-heading">Visit</h2>
+          <ul>
+            <li>
+              <a href="https://maps.google.com/?q=14585+Highway+152+Mobeetie+TX+79061" target="_blank" rel="noopener noreferrer">
+                14585 Highway 152<br />
+                Mobeetie, TX 79061
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="cap-footer-col">
+          <h2 class="cap-footer-heading">Connect</h2>
+          <ul>
+            <li><a href="mailto:Caprock-Information@aramark.com">Caprock-Information@aramark.com</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="cap-footer-base">
+      <span>&copy; 2026 Caprock. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var csBody = document.querySelector('body');
+      var csNavbarMenu = document.getElementById('cs-navigation');
+      var mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+      if (!mobileMenuToggle || !csNavbarMenu) return;
+
+      function toggleMenu() {
+        mobileMenuToggle.classList.toggle('cs-active');
+        csNavbarMenu.classList.toggle('cs-active');
+        csBody.classList.toggle('cs-open');
+      }
+
+      function setAriaExpanded(element) {
+        var isExpanded = element.getAttribute('aria-expanded');
+        element.setAttribute('aria-expanded', isExpanded === 'false' ? 'true' : 'false');
+      }
+
+      // Toggle hamburger menu
+      mobileMenuToggle.addEventListener('click', function () {
+        toggleMenu();
+        setAriaExpanded(mobileMenuToggle);
+      });
+
+      // Close mobile menu when any nav link is clicked (anchor/hash links)
+      var navLinks = document.querySelectorAll('.cap-nav-link');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (csNavbarMenu.classList.contains('cs-active')) {
+            toggleMenu();
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Close mobile menu with Escape key
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && mobileMenuToggle.classList.contains('cs-active')) {
+          toggleMenu();
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenuToggle.focus();
+        }
+      });
+    });
+
+    // ===================== ACCORDION =====================
+    (function () {
+      var triggers = document.querySelectorAll('.cap-accordion-trigger');
+      triggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+          var panelId = trigger.getAttribute('aria-controls');
+          var panel = document.getElementById(panelId);
+          trigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+          panel.classList.toggle('cap-accordion-panel--open', !isExpanded);
+        });
+      });
+    }());
+
+    // ===================== CAROUSEL =====================
+    (function () {
+      var carousels = document.querySelectorAll('.cap-carousel');
+      carousels.forEach(function (carousel) {
+        var track = carousel.querySelector('.cap-carousel-track');
+        var slides = carousel.querySelectorAll('.cap-carousel-slide');
+        var dots = carousel.querySelectorAll('.cap-carousel-dot');
+        var prevBtn = carousel.querySelector('.cap-carousel-btn--prev');
+        var nextBtn = carousel.querySelector('.cap-carousel-btn--next');
+        var total = slides.length;
+        var current = 0;
+        var autoTimer;
+
+        function goTo(index) {
+          current = (index + total) % total;
+          track.style.transform = 'translateX(-' + (current * 100) + '%)';
+          dots.forEach(function (dot, i) {
+            dot.classList.toggle('cap-carousel-dot--active', i === current);
+            dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+          });
+        }
+
+        function resetTimer() {
+          clearInterval(autoTimer);
+          autoTimer = setInterval(function () { goTo(current + 1); }, 5000);
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+        }
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+        }
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+        });
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+        carousel.addEventListener('mouseleave', resetTimer);
+
+        // Keyboard navigation
+        carousel.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowLeft') { goTo(current - 1); resetTimer(); }
+          if (e.key === 'ArrowRight') { goTo(current + 1); resetTimer(); }
+        });
+
+        resetTimer();
+      });
+    }());
+  </script>
+
+</body>
+</html>
+{{ standard_footer_includes }}

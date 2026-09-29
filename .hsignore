@@ -1,0 +1,4 @@
+node_modules
+package-lock.json
+hubspot.config.yml
+.git
