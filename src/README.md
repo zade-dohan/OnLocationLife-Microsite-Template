@@ -14,7 +14,7 @@ src/
   modules/             one folder per reusable section (see IMPLEMENTATION_PLAN.md)
   templates/
     base.html           shared head/header/footer layout
-    caprock-home.html    the page template (extends base.html)
+    home.html            the page template (extends base.html)
 ```
 
 ## Uploading / developing locally
@@ -34,7 +34,7 @@ hs.cmd cms watch src onlocationlife-microsite
 ## Creating a page from the template
 
 1. In HubSpot: **Marketing → Website → Website Pages → Create**.
-2. Choose the **Caprock Home** template (label set in `caprock-home.html`).
+2. Choose the **Home** template (label set in `home.html`).
 3. The page starts fully populated with the Caprock copy/images/layout — edit any module in place.
 
 ## Changing branding (per property)
@@ -53,7 +53,7 @@ Every section is a module in the page's drag-and-drop area — click it in the c
 
 ## Creating another property site (e.g. Roman)
 
-1. Create a new page from the **Caprock Home** template.
+1. Create a new page from the **Home** template.
 2. Update the header/footer modules (logo, nav links, tagline) and every content module's copy/images for the new property.
 3. Adjust theme settings (or use a separate theme settings group / domain, if Roman should have its own color scheme independent of Caprock) — theme settings currently apply account-wide, so if Roman needs different defaults, consider adjusting field values per-page rather than at the theme level, since HubSpot theme settings are shared across all pages using this theme in one account.
 
@@ -61,11 +61,11 @@ No new modules or templates need to be created for a new property — only conte
 
 ## Anchor links
 
-The primary nav (`header` module) and footer links point to `#cap-intro`, `#cap-life-on-site`, `#cap-housing`, and `#cap-contact`. Those IDs are set via each module's `section_id` field:
-- Intro → `cap-intro`
-- Amenities ("Life on Site") → `cap-life-on-site`
-- Housing (split-content) → `cap-housing`
-- Final CTA → `cap-contact`
+The primary nav (`header` module) and footer links point to `#ms-intro`, `#ms-life-on-site`, `#ms-housing`, and `#ms-contact`. Those IDs are set via each module's `section_id` field:
+- Intro → `ms-intro`
+- Amenities ("Life on Site") → `ms-life-on-site`
+- Housing (split-content) → `ms-housing`
+- Final CTA → `ms-contact`
 
 **If you reorder or remove these modules, the anchors still work as long as the `section_id` field values are unchanged.** If you delete one of these modules, update or remove the corresponding nav/footer link.
 

@@ -4,7 +4,7 @@
 
 **Source (`Caprock/`, untouched):**
 - `caprock.html` — single static HubL page: header/nav, hero, intro, video (Vimeo iframe), amenities grid (4 items), coming soon grid (3 items), community code of conduct accordion (5 items), housing split section (image carousel + 9-item feature list), dining split section (single image, reversed), final CTA/contact section (3 contact items), footer (brand + 3 link columns).
-- `caprock.css` (~1330 lines) — already namespaced with a `cap-` prefix, uses CSS custom properties for brand tokens (`--gold`, `--evergreen`, `--black`, etc.) and 3 custom `@font-face` fonts (Empera, Gelica, Gotham).
+- `caprock.css` (~1330 lines) — already namespaced with a `ms-` prefix, uses CSS custom properties for brand tokens (`--gold`, `--evergreen`, `--black`, etc.) and 3 custom `@font-face` fonts (Empera, Gelica, Gotham).
 - `fonts/` — `empera-regular.otf`, `Gelica-Regular.otf`, `Gotham Book.otf`.
 - `images/` — 14 files (hero bg, emblem, logos, amenities bg, housing gallery x3, dining photo, CTA bg, footer/"managed by" logos).
 - Inline `<script>` — mobile nav toggle, accordion, and an auto-advancing image carousel, all using `querySelectorAll`/`forEach` (already safe for multiple instances).
@@ -12,9 +12,9 @@
 **Existing `src/` (before this work):** a placeholder scaffold (`templates/basic-template.html`, `css/basic-template.css`) unrelated to Caprock content — replaced.
 
 **Key findings:**
-- Anchor targets used by the nav (`#cap-intro`, `#cap-life-on-site`, `#cap-housing`, `#cap-contact`) map to the Intro, Amenities, Housing, and Final CTA sections respectively — preserved as a `section_id` field on those modules.
+- Anchor targets used by the nav (`#ms-intro`, `#ms-life-on-site`, `#ms-housing`, `#ms-contact`) map to the Intro, Amenities, Housing, and Final CTA sections respectively — preserved as a `section_id` field on those modules.
 - Housing and Dining are the same visual "split" pattern (image + copy, optional reversed layout) — modeled as **one** reusable module (`split-content.module`) used twice with different field overrides, instead of two separate modules.
-- No default HubSpot module covers the button/CTA UI in the source design (verified against the HubSpot/cms-theme-boilerplate reference repo — it also ships its own custom `button.module` rather than using `@hubspot/button`). CTAs are implemented as plain `<a class="cap-btn">` links.
+- No default HubSpot module covers the button/CTA UI in the source design (verified against the HubSpot/cms-theme-boilerplate reference repo — it also ships its own custom `button.module` rather than using `@hubspot/button`). CTAs are implemented as plain `<a class="ms-btn">` links.
 
 ## 2. Theme directory structure
 
@@ -30,16 +30,16 @@ src/
     header.module/        structural, placed directly in base.html (not draggable)
     footer.module/         structural, placed directly in base.html (not draggable)
     hero.module/           draggable, main_content
-    intro.module/          draggable, main_content (anchor: cap-intro)
+    intro.module/          draggable, main_content (anchor: ms-intro)
     video.module/          draggable, main_content
-    amenities.module/      draggable, main_content (anchor: cap-life-on-site)
+    amenities.module/      draggable, main_content (anchor: ms-life-on-site)
     coming-soon.module/    draggable, main_content
     accordion.module/      draggable, main_content (Community Code of Conduct)
-    split-content.module/  draggable, main_content — reused for Housing (anchor: cap-housing) and Dining
-    final-cta.module/      draggable, main_content (anchor: cap-contact)
+    split-content.module/  draggable, main_content — reused for Housing (anchor: ms-housing) and Dining
+    final-cta.module/      draggable, main_content (anchor: ms-contact)
   templates/
     base.html              shared layout: head, theme CSS-variable bridge, header/footer modules, JS
-    caprock-home.html      extends base.html; dnd_area with all content modules pre-populated with Caprock's copy
+    home.html               extends base.html; dnd_area with all content modules pre-populated with placeholder copy
 ```
 
 ## 3. Module field summary
@@ -54,7 +54,7 @@ src/
 | `amenities` | `section_id`, `background_image`, `eyebrow`, `heading`, `intro`, `items` (repeater: icon choice, title, text) | Icon choice renders one of 4 inline SVGs from source (bed/dining/transport/shield) |
 | `coming-soon` | `section_id`, `eyebrow`, `heading`, `items` (repeater: title, text) | Renders nothing if `items` is empty |
 | `accordion` | `section_id`, `eyebrow`, `heading`, `intro`, `items` (repeater: title, content richtext) | Panel IDs namespaced with `module_id` to support multiple instances per page |
-| `split-content` | `section_id`, `reverse` (bool), `media_type` (image/carousel), `image`, `gallery` (repeater), `eyebrow`, `heading`, `lead`, `feature_list` (repeater) | Reused for both Housing and Dining via per-instance `dnd_module` overrides in `caprock-home.html` |
+| `split-content` | `section_id`, `reverse` (bool), `media_type` (image/carousel), `image`, `gallery` (repeater), `eyebrow`, `heading`, `lead`, `feature_list` (repeater) | Reused for both Housing and Dining via per-instance `dnd_module` overrides in `home.html` |
 | `final-cta` | `section_id`, `background_image`, `emblem_image`, `eyebrow`, `heading`, `subtext`, `cta_label`, `cta_link`, `contact_items` (repeater: title, value richtext, href, external) | |
 
 ## 4. Theme-level settings (`src/fields.json`)

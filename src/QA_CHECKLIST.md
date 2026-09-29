@@ -43,12 +43,12 @@
 - [ ] Hiding the hero CTA (`show_cta = false`) removes the button without layout gaps.
 
 ## New-property cloning checks (e.g. Roman)
-- [ ] Create a second page from the `Caprock Home` template and confirm it starts with Caprock's default content (expected — override per property).
+- [ ] Create a second page from the `Home` template and confirm it starts with the theme's default placeholder content (expected — override per property).
 - [ ] Change header/footer logo, nav links, and every module's copy/images for the new property; confirm no residual Caprock-only hardcoded values remain.
 - [ ] Confirm changing theme settings (colors/fonts) does not unexpectedly affect the Caprock page if Roman needs different values (see README's "Known limitations" on account-wide theme settings).
 
 ## Remaining manual HubSpot checks
 - [ ] Verify `get_asset_url`-resolved image/font paths actually resolve to hosted CDN URLs after upload (spot check a few `<img src>`/`@font-face` URLs in the rendered HTML).
-- [ ] Confirm the "Caprock Home" template appears in the template picker and its screenshot/preview loads.
+- [ ] Confirm the "Home" template appears in the template picker and its screenshot/preview loads.
 - [ ] Confirm SEO fields (`page_meta.html_title`, `meta_description`) are editable per page and populate the `<title>`/meta description/OG tags.
 - [ ] Cross-browser check (Safari/iOS in particular, for the `background-attachment: fixed` parallax sections, which iOS Safari handles differently).

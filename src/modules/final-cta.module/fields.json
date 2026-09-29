@@ -3,14 +3,14 @@
     "label": "Section ID (anchor)",
     "name": "section_id",
     "type": "text",
-    "default": "cap-contact"
+    "default": "ms-contact"
   },
   {
     "label": "Background image",
     "name": "background_image",
     "type": "image",
     "default": {
-      "src": "../images/ram-rodeo-yun-wang.jpg",
+      "src": "",
       "alt": "",
       "loading": "lazy"
     }
@@ -20,10 +20,8 @@
     "name": "emblem_image",
     "type": "image",
     "default": {
-      "src": "../images/Caprock-Emblem-Iso-white.png",
+      "src": "",
       "alt": "",
-      "width": 72,
-      "height": 72,
       "loading": "lazy"
     }
   },
@@ -37,25 +35,25 @@
     "label": "Heading",
     "name": "heading",
     "type": "text",
-    "default": "Ready to call Caprock home?"
+    "default": "Lorem Ipsum Dolor Sit Amet"
   },
   {
     "label": "Subtext",
     "name": "subtext",
     "type": "text",
-    "default": "Questions about Caprock? We're here to help."
+    "default": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt."
   },
   {
     "label": "CTA label",
     "name": "cta_label",
     "type": "text",
-    "default": "Contact For General Information"
+    "default": "Contact Us"
   },
   {
     "label": "CTA link",
     "name": "cta_link",
     "type": "text",
-    "default": "mailto:Caprock-Information@aramark.com"
+    "default": "mailto:info@example.com"
   },
   {
     "label": "Contact items",
@@ -77,20 +75,20 @@
     "default": [
       {
         "title": "Email",
-        "value": "Caprock-Information@aramark.com",
-        "href": "mailto:Caprock-Information@aramark.com",
+        "value": "info@example.com",
+        "href": "mailto:info@example.com",
         "external": false
       },
       {
         "title": "Visit",
-        "value": "14585 Highway 152<br />Mobeetie, TX 79061",
-        "href": "https://maps.google.com/?q=14585+Highway+152+Mobeetie+TX+79061",
+        "value": "123 Lorem Ipsum Street<br />Dolor City, ST 00000",
+        "href": "https://maps.google.com/?q=123+Lorem+Ipsum+Street",
         "external": true
       },
       {
-        "title": "Work at Caprock",
-        "value": "View Open Roles Here",
-        "href": "https://careers.aramark.com/search/?keyword=caprock&location=",
+        "title": "Careers",
+        "value": "View Open Roles",
+        "href": "https://example.com/careers",
         "external": true
       }
     ]

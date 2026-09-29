@@ -9,20 +9,20 @@
     "label": "Eyebrow",
     "name": "eyebrow",
     "type": "text",
-    "default": "Life on Site"
+    "default": "Lorem Ipsum"
   },
   {
     "label": "Heading",
     "name": "heading",
     "type": "text",
-    "default": "Community Code of Conduct"
+    "default": "Consectetur Adipiscing Elit"
   },
   {
     "label": "Intro text",
     "name": "intro",
     "type": "richtext",
     "enabled_features": ["standard_emphasis"],
-    "default": "<p>At Caprock, we're committed to fostering a community where every guest feels respected, safe, and at home. Our Community Guidelines reflect the shared values that make that possible: care for one another, care for our shared spaces, and a spirit of cooperation throughout your stay.</p>"
+    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>"
   },
   {
     "label": "Accordion items",
@@ -51,24 +51,24 @@
     ],
     "default": [
       {
-        "title": "Respect & Behavior",
-        "content": "<ul><li>Occupants must behave in an orderly, respectful manner at all times.</li><li>Respect others' <strong>rights, safety, and privacy</strong> and avoid inappropriate conduct.</li></ul>"
+        "title": "Lorem Ipsum",
+        "content": "<ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Sed do eiusmod <strong>tempor incididunt ut labore</strong> et dolore magna aliqua.</li></ul>"
       },
       {
-        "title": "Care for Community",
-        "content": "<ul><li>Keep all areas <strong>clean and well-maintained</strong>.</li><li>Treat facilities and property with care.</li></ul>"
+        "title": "Dolor Sit Amet",
+        "content": "<ul><li>Ut enim ad minim veniam, <strong>quis nostrud exercitation</strong> ullamco laboris.</li><li>Nisi ut aliquip ex ea commodo consequat.</li></ul>"
       },
       {
-        "title": "Cooperation",
-        "content": "<ul><li>Follow directions and cooperate with <strong>management, security, and authorized staff</strong>.</li><li>Report any issues or concerns promptly to management.</li></ul>"
+        "title": "Consectetur Adipiscing",
+        "content": "<ul><li>Duis aute irure dolor in <strong>reprehenderit in voluptate</strong> velit esse.</li><li>Cillum dolore eu fugiat nulla pariatur.</li></ul>"
       },
       {
-        "title": "Zero Tolerance for Harassment & Discrimination",
-        "content": "<ul><li>Harassment or discrimination is strictly prohibited based on protected characteristics (race, gender, religion, disability, etc.).</li><li>All reports are investigated thoroughly.</li><li>Violators may face <strong>discipline up to removal from housing and employer notification</strong>.</li></ul>"
+        "title": "Excepteur Sint Occaecat",
+        "content": "<ul><li>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</li><li>All reports are investigated thoroughly, with <strong>discipline up to removal</strong> where warranted.</li></ul>"
       },
       {
-        "title": "Protection Against Retaliation",
-        "content": "<ul><li>Individuals who report concerns or participate in investigations in good faith are <strong>protected from retaliation</strong>.</li></ul>"
+        "title": "Qui Officia Deserunt",
+        "content": "<ul><li>Individuals who report concerns in good faith are <strong>protected from retaliation</strong>.</li></ul>"
       }
     ]
   }

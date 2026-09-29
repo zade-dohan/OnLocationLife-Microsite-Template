@@ -4,10 +4,8 @@
     "name": "logo",
     "type": "image",
     "default": {
-      "src": "../images/Caprock-Secondary-4C.png",
-      "alt": "Caprock",
-      "width": 480,
-      "height": 120,
+      "src": "",
+      "alt": "",
       "loading": "lazy"
     }
   },
@@ -15,7 +13,7 @@
     "label": "Tagline",
     "name": "tagline",
     "type": "text",
-    "default": "An elevated workforce community designed for comfort, connection, and life on site."
+    "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "label": "\"Managed by\" label",
@@ -34,6 +32,12 @@
       "height": 447,
       "loading": "lazy"
     }
+  },
+  {
+    "label": "\"Managed by\" link",
+    "name": "managed_by_link",
+    "type": "text",
+    "default": "https://www.aramark.com"
   },
   {
     "label": "Footer columns",
@@ -88,22 +92,22 @@
       {
         "heading": "Explore",
         "links": [
-          { "title": "About", "href": "#cap-intro", "external": false },
-          { "title": "Life On Site", "href": "#cap-life-on-site", "external": false },
-          { "title": "Housing", "href": "#cap-housing", "external": false },
-          { "title": "Contact", "href": "#cap-contact", "external": false }
+          { "title": "About", "href": "#ms-intro", "external": false },
+          { "title": "Life On Site", "href": "#ms-life-on-site", "external": false },
+          { "title": "Housing", "href": "#ms-housing", "external": false },
+          { "title": "Contact", "href": "#ms-contact", "external": false }
         ]
       },
       {
         "heading": "Visit",
         "links": [
-          { "title": "14585 Highway 152, Mobeetie, TX 79061", "href": "https://maps.google.com/?q=14585+Highway+152+Mobeetie+TX+79061", "external": true }
+          { "title": "123 Lorem Ipsum Street, Dolor City, ST 00000", "href": "https://maps.google.com/?q=123+Lorem+Ipsum+Street", "external": true }
         ]
       },
       {
         "heading": "Connect",
         "links": [
-          { "title": "Caprock-Information@aramark.com", "href": "mailto:Caprock-Information@aramark.com", "external": false }
+          { "title": "info@example.com", "href": "mailto:info@example.com", "external": false }
         ]
       }
     ]
@@ -112,6 +116,6 @@
     "label": "Copyright text",
     "name": "copyright_text",
     "type": "text",
-    "default": "\u00a9 2026 Caprock. All rights reserved."
+    "default": "\u00a9 2026 Your Company. All rights reserved."
   }
 ]

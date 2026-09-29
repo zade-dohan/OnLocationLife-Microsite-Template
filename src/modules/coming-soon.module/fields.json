@@ -43,9 +43,9 @@
       }
     ],
     "default": [
-      { "title": "Recreation and Fitness Center", "text": "Soccer fields, pickleball, basketball, and golf simulator." },
-      { "title": "RV Parking", "text": "Full-service RV parking with access to every amenity." },
-      { "title": "Retail and Convenience Stores", "text": "Everyday essentials available anytime, day or night." }
+      { "title": "Lorem Ipsum", "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+      { "title": "Dolor Sit Amet", "text": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+      { "title": "Consectetur Adipiscing", "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris." }
     ]
   }
 ]

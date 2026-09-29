@@ -9,24 +9,24 @@
     "label": "Eyebrow",
     "name": "eyebrow",
     "type": "text",
-    "default": "Experience Caprock"
+    "default": "Lorem Ipsum"
   },
   {
     "label": "Heading",
     "name": "heading",
     "type": "text",
-    "default": "See life on site."
+    "default": "Consectetur Adipiscing Elit"
   },
   {
     "label": "Video embed URL",
     "name": "video_embed_url",
     "type": "text",
-    "default": "https://player.vimeo.com/video/1207925880?h=eb624d0693&badge=0&autopause=0&player_id=0&app_id=58479"
+    "default": ""
   },
   {
     "label": "Video title (for screen readers)",
     "name": "video_title",
     "type": "text",
-    "default": "Caprock Workforce Housing"
+    "default": "Lorem Ipsum Video"
   }
 ]

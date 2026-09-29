@@ -8,7 +8,7 @@
 
 **Templates**
 - `src/templates/base.html` — shared layout (head, theme CSS-variable bridge, header/footer module includes, JS)
-- `src/templates/caprock-home.html` — page template, extends `base.html`, drag-and-drop `main_content` area
+- `src/templates/home.html` — page template, extends `base.html`, drag-and-drop `main_content` area
 
 **Modules** (each with `fields.json`, `meta.json`, `module.html`)
 - `src/modules/header.module`

@@ -1,6 +1,6 @@
 /**
  * On Location Properties Theme -- shared interactive behavior.
- * Ported from the Caprock static site. Handles the mobile nav
+ * Handles the mobile nav
  * toggle, the Community/Code-of-Conduct style accordion, and the
  * housing/dining image carousels. All selectors are scoped with
  * querySelectorAll + forEach so multiple module instances on one
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
     });
 
-    document.querySelectorAll('.cap-nav-link').forEach(function (link) {
+    document.querySelectorAll('.ms-nav-link').forEach(function (link) {
       link.addEventListener('click', function () {
         if (nav.classList.contains('cs-active')) {
           toggleMenu();
@@ -42,24 +42,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================== ACCORDION =====================
-  document.querySelectorAll('.cap-accordion-trigger').forEach(function (trigger) {
+  document.querySelectorAll('.ms-accordion-trigger').forEach(function (trigger) {
     trigger.addEventListener('click', function () {
       var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
       var panel = document.getElementById(trigger.getAttribute('aria-controls'));
       trigger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
       if (panel) {
-        panel.classList.toggle('cap-accordion-panel--open', !isExpanded);
+        panel.classList.toggle('ms-accordion-panel--open', !isExpanded);
       }
     });
   });
 
   // ===================== CAROUSEL =====================
-  document.querySelectorAll('.cap-carousel').forEach(function (carousel) {
-    var track = carousel.querySelector('.cap-carousel-track');
-    var slides = carousel.querySelectorAll('.cap-carousel-slide');
-    var dots = carousel.querySelectorAll('.cap-carousel-dot');
-    var prevBtn = carousel.querySelector('.cap-carousel-btn--prev');
-    var nextBtn = carousel.querySelector('.cap-carousel-btn--next');
+  document.querySelectorAll('.ms-carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.ms-carousel-track');
+    var slides = carousel.querySelectorAll('.ms-carousel-slide');
+    var dots = carousel.querySelectorAll('.ms-carousel-dot');
+    var prevBtn = carousel.querySelector('.ms-carousel-btn--prev');
+    var nextBtn = carousel.querySelector('.ms-carousel-btn--next');
     var total = slides.length;
     var current = 0;
     var autoTimer;
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       current = (index + total) % total;
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
       dots.forEach(function (dot, i) {
-        dot.classList.toggle('cap-carousel-dot--active', i === current);
+        dot.classList.toggle('ms-carousel-dot--active', i === current);
         dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
       });
     }

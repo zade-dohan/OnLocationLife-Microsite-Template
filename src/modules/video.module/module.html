@@ -1,12 +1,12 @@
-<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="cap-section cap-section--dark cap-video-section">
-  <div class="cap-container">
-    <header class="cap-section-head">
-      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
-      <span class="cap-rule"></span>
-      <h2 class="cap-h2">{{ module.heading }}</h2>
+<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="ms-section ms-section--dark ms-video-section">
+  <div class="ms-container">
+    <header class="ms-section-head">
+      {% if module.eyebrow %}<span class="ms-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="ms-rule"></span>
+      <h2 class="ms-h2">{{ module.heading }}</h2>
     </header>
     {% if module.video_embed_url %}
-      <div class="cap-video-wrapper">
+      <div class="ms-video-wrapper">
         <iframe
           src="{{ module.video_embed_url|escape_attr }}"
           frameborder="0"

@@ -1,49 +1,49 @@
 <section
   id="{{ module.section_id|escape_attr }}"
-  class="cap-cta-new"
+  class="ms-cta-new"
   {% if module.background_image.src %}style="--cta-bg: url({{ module.background_image.src|escape_attr }})"{% endif %}
 >
-  <div class="cap-cta-overlay" aria-hidden="true"></div>
-  <div class="cap-container cap-cta-grid">
+  <div class="ms-cta-overlay" aria-hidden="true"></div>
+  <div class="ms-container ms-cta-grid">
 
-    <div class="cap-cta-messaging">
+    <div class="ms-cta-messaging">
       {% if module.emblem_image.src %}
         <img
           src="{{ module.emblem_image.src|escape_url }}"
           alt=""
           width="{{ module.emblem_image.width }}"
           height="{{ module.emblem_image.height }}"
-          class="cap-cta-emblem"
+          class="ms-cta-emblem"
           aria-hidden="true"
           loading="lazy"
           decoding="async"
         />
       {% endif %}
-      {% if module.eyebrow %}<span class="cap-eyebrow cap-cta-eyebrow">{{ module.eyebrow }}</span>{% endif %}
-      <span class="cap-rule"></span>
-      <h2 class="cap-cta-title">{{ module.heading }}</h2>
-      {% if module.subtext %}<p class="cap-cta-sub">{{ module.subtext }}</p>{% endif %}
+      {% if module.eyebrow %}<span class="ms-eyebrow ms-cta-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="ms-rule"></span>
+      <h2 class="ms-cta-title">{{ module.heading }}</h2>
+      {% if module.subtext %}<p class="ms-cta-sub">{{ module.subtext }}</p>{% endif %}
       {% if module.cta_label %}
-        <div class="cap-cta-btns">
-          <a href="{{ module.cta_link|escape_attr }}" class="cap-btn">{{ module.cta_label }}</a>
+        <div class="ms-cta-btns">
+          <a href="{{ module.cta_link|escape_attr }}" class="ms-btn">{{ module.cta_label }}</a>
         </div>
       {% endif %}
     </div>
 
     {% if module.contact_items|length > 0 %}
-      <div class="cap-cta-contact">
+      <div class="ms-cta-contact">
         {% for item in module.contact_items %}
-          {% if not loop.first %}<div class="cap-cta-divider" aria-hidden="true"></div>{% endif %}
-          <div class="cap-cta-contact-item">
-            <span class="cap-cta-contact-label">{{ item.title }}</span>
+          {% if not loop.first %}<div class="ms-cta-divider" aria-hidden="true"></div>{% endif %}
+          <div class="ms-cta-contact-item">
+            <span class="ms-cta-contact-label">{{ item.title }}</span>
             {% if item.href %}
               <a
                 href="{{ item.href|escape_attr }}"
                 {% if item.external %}target="_blank" rel="noopener noreferrer"{% endif %}
-                class="cap-cta-contact-value"
+                class="ms-cta-contact-value"
               >{{ item.value|sanitize_html }}</a>
             {% else %}
-              <span class="cap-cta-contact-value">{{ item.value|sanitize_html }}</span>
+              <span class="ms-cta-contact-value">{{ item.value|sanitize_html }}</span>
             {% endif %}
           </div>
         {% endfor %}

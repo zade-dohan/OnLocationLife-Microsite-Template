@@ -3,17 +3,15 @@
     "label": "Section ID (anchor)",
     "name": "section_id",
     "type": "text",
-    "default": "cap-life-on-site"
+    "default": "ms-life-on-site"
   },
   {
     "label": "Background image",
     "name": "background_image",
     "type": "image",
     "default": {
-      "src": "../images/41171235363574b777c8f2f1e8daf86ad0b99d01-1200x800.jpg",
+      "src": "",
       "alt": "",
-      "width": 1200,
-      "height": 800,
       "loading": "lazy"
     }
   },
@@ -21,20 +19,20 @@
     "label": "Eyebrow",
     "name": "eyebrow",
     "type": "text",
-    "default": "Life on Site"
+    "default": "Lorem Ipsum"
   },
   {
     "label": "Heading",
     "name": "heading",
     "type": "text",
-    "default": "Designed for the whole day."
+    "default": "Consectetur Adipiscing Elit"
   },
   {
     "label": "Intro text",
     "name": "intro",
     "type": "richtext",
     "enabled_features": ["standard_emphasis"],
-    "default": "<p>After the workday, stay active, share a meal with coworkers, or take time to reset. Every experience is built around comfort, convenience, and connection.</p>"
+    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   },
   {
     "label": "Amenities",
@@ -56,9 +54,21 @@
           ["bed", "Single occupancy / bed"],
           ["dining", "Dining"],
           ["transport", "Transportation"],
-          ["shield", "Security / guest services"]
+          ["shield", "Security / guest services"],
+          ["custom", "Upload custom icon"]
         ],
         "default": "bed"
+      },
+      {
+        "label": "Custom icon image",
+        "name": "icon_image",
+        "type": "image",
+        "default": { "src": "", "alt": "", "loading": "lazy" },
+        "visibility": {
+          "controlling_field": "items.icon",
+          "controlling_value_regex": "custom",
+          "operator": "EQUAL"
+        }
       },
       {
         "label": "Title",
@@ -77,23 +87,23 @@
     "default": [
       {
         "icon": "bed",
-        "title": "Single Occupancy Rooms",
-        "text": "Private, fully furnished rooms with climate control and Wi-Fi. Weekly housekeeping services available to guests."
+        "title": "Lorem Ipsum",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
       },
       {
         "icon": "dining",
-        "title": "On-Site Dining",
-        "text": "Freshly prepared meals, grab-and-go, and food trucks. Coffee Bar and Barbeque Kitchen coming soon."
+        "title": "Dolor Sit Amet",
+        "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
       },
       {
         "icon": "transport",
-        "title": "Transportation Services",
-        "text": "Reliable transportation services to and from your work site."
+        "title": "Consectetur Adipiscing",
+        "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
       },
       {
         "icon": "shield",
-        "title": "Guest & Security Services",
-        "text": "Caprock supports 24/7 on site guest services and security."
+        "title": "Sed Do Eiusmod",
+        "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt."
       }
     ]
   }

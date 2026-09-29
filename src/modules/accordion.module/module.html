@@ -1,21 +1,21 @@
-<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="cap-section cap-section--dark cap-conduct">
-  <div class="cap-container">
-    <header class="cap-section-head">
-      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
-      <span class="cap-rule"></span>
-      <h2 class="cap-h2">{{ module.heading }}</h2>
-      {% if module.intro %}<div class="cap-section-intro">{{ module.intro|sanitize_html }}</div>{% endif %}
+<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="ms-section ms-section--dark ms-conduct">
+  <div class="ms-container">
+    <header class="ms-section-head">
+      {% if module.eyebrow %}<span class="ms-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="ms-rule"></span>
+      <h2 class="ms-h2">{{ module.heading }}</h2>
+      {% if module.intro %}<div class="ms-section-intro">{{ module.intro|sanitize_html }}</div>{% endif %}
     </header>
 
-    <div class="cap-accordion">
+    <div class="ms-accordion">
       {% for item in module.items %}
         {% set panel_id = "conduct-" ~ module_id ~ "-" ~ loop.index %}
-        <div class="cap-accordion-item">
-          <button class="cap-accordion-trigger" aria-expanded="false" aria-controls="{{ panel_id }}" type="button">
-            <span class="cap-accordion-label">{{ item.title }}</span>
-            <span class="cap-accordion-icon" aria-hidden="true"></span>
+        <div class="ms-accordion-item">
+          <button class="ms-accordion-trigger" aria-expanded="false" aria-controls="{{ panel_id }}" type="button">
+            <span class="ms-accordion-label">{{ item.title }}</span>
+            <span class="ms-accordion-icon" aria-hidden="true"></span>
           </button>
-          <div class="cap-accordion-panel" id="{{ panel_id }}">
+          <div class="ms-accordion-panel" id="{{ panel_id }}">
             {{ item.content|sanitize_html }}
           </div>
         </div>

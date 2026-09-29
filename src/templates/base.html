@@ -7,6 +7,7 @@ templateType: none
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page_meta.html_title }}</title>
+
   {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}" />{% endif %}
 
   <meta property="og:title" content="{{ page_meta.html_title }}" />
@@ -19,7 +20,7 @@ templateType: none
 
   {# Theme settings (Brand/Typography/Buttons/Layout) become CSS custom
      properties here so theme.css and every module can consume them via
-     var(--token). Values default to the original Caprock design. #}
+     var(--token). Values default to the theme's base design. #}
   <style>
     :root {
       --gold: {{ theme.brand.accent_color.color }};
@@ -58,15 +59,52 @@ templateType: none
 
   {{ standard_header_includes }}
 </head>
-<body class="cap-page {{ body_css }}">
+<body class="ms-page {{ body_css }}">
 
-  {% module "header", path="../modules/header.module" %}
+  {% module "header", path="../modules/header.module",
+    logo_link="/",
+    nav_links=[
+      { "title": "About", "href": "#ms-intro" }
+    ]
+  %}
 
   <main id="main">
     {% block body %}{% endblock %}
   </main>
 
-  {% module "footer", path="../modules/footer.module" %}
+  {% module "footer", path="../modules/footer.module",
+    tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    managed_by_label="Managed by",
+    managed_by_logo={
+      "src": get_asset_url("../images/nexuslogowhite.png"),
+      "alt": "Aramark",
+      "width": 1756,
+      "height": 447,
+      "loading": "lazy"
+    },
+    managed_by_link="https://www.aramark.com",
+    columns=[
+      {
+        "heading": "Explore",
+        "links": [
+          { "title": "About", "href": "#ms-intro", "external": False }
+        ]
+      },
+      {
+        "heading": "Visit",
+        "links": [
+          { "title": "123 Lorem Ipsum Street, Dolor City, ST 00000", "href": "https://maps.google.com/?q=123+Lorem+Ipsum+Street", "external": True }
+        ]
+      },
+      {
+        "heading": "Connect",
+        "links": [
+          { "title": "info@example.com", "href": "mailto:info@example.com", "external": False }
+        ]
+      }
+    ],
+    copyright_text="© 2026 Your Company. All rights reserved."
+  %}
 
   {{ require_js(get_asset_url('../js/theme.js')) }}
   {{ standard_footer_includes }}

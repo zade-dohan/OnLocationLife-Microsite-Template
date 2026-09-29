@@ -1,12 +1,12 @@
-<section id="{{ module.section_id|escape_attr }}" class="cap-section cap-section--light">
-  <div class="cap-container cap-intro-grid">
-    <div class="cap-intro-head">
-      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
-      <span class="cap-rule"></span>
-      <h2 class="cap-h2">{{ module.heading }}</h2>
+<section id="{{ module.section_id|escape_attr }}" class="ms-section ms-section--light">
+  <div class="ms-container ms-intro-grid">
+    <div class="ms-intro-head">
+      {% if module.eyebrow %}<span class="ms-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="ms-rule"></span>
+      <h2 class="ms-h2">{{ module.heading }}</h2>
     </div>
-    <div class="cap-intro-body">
-      {% if module.lead %}<div class="cap-lead">{{ module.lead|sanitize_html }}</div>{% endif %}
+    <div class="ms-intro-body">
+      {% if module.lead %}<div class="ms-lead">{{ module.lead|sanitize_html }}</div>{% endif %}
       {{ module.content|sanitize_html }}
     </div>
   </div>

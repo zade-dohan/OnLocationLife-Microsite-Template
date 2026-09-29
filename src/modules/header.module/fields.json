@@ -4,10 +4,8 @@
     "name": "logo",
     "type": "image",
     "default": {
-      "src": "../images/Caprock-Secondary-4C.png",
-      "alt": "Caprock",
-      "width": 480,
-      "height": 120,
+      "src": "",
+      "alt": "",
       "loading": "eager"
     }
   },
@@ -42,10 +40,7 @@
       }
     ],
     "default": [
-      { "title": "About", "href": "#cap-intro" },
-      { "title": "Life On Site", "href": "#cap-life-on-site" },
-      { "title": "Housing", "href": "#cap-housing" },
-      { "title": "Contact", "href": "#cap-contact" }
+      { "title": "About", "href": "#ms-intro" }
     ]
   }
 ]

@@ -1,0 +1,79 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Microsite LP
+-->
+{% extends "./base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content" label="Page content" %}
+
+    {# Hero -- shown by default on every new page created from this template #}
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/hero.module", width=12, offset=0,
+          section_id="ms-hero",
+          eyebrow="Lorem Ipsum",
+          title="Lorem Ipsum Dolor Sit Amet",
+          subtitle="Consectetur Adipiscing Elit",
+          intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          show_cta=True,
+          cta_label="Learn More",
+          cta_link="#ms-life-on-site"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {# Intro / About -- shown by default on every new page created from this template #}
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/intro.module", width=12, offset=0,
+          section_id="ms-intro",
+          eyebrow="About",
+          heading="Lorem Ipsum Dolor Sit Amet",
+          lead="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+          content="<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {# Final CTA -- shown by default on every new page created from this template #}
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/final-cta.module", width=12, offset=0,
+          section_id="ms-contact",
+          eyebrow="Get In Touch",
+          heading="Lorem Ipsum Dolor Sit Amet",
+          subtext="Consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+          cta_label="Contact Us",
+          cta_link="mailto:info@example.com",
+          contact_items=[
+            {
+              "title": "Email",
+              "value": "info@example.com",
+              "href": "mailto:info@example.com",
+              "external": False
+            },
+            {
+              "title": "Visit",
+              "value": "123 Lorem Ipsum Street<br />Dolor City, ST 00000",
+              "href": "https://maps.google.com/?q=123+Lorem+Ipsum+Street",
+              "external": True
+            },
+            {
+              "title": "Careers",
+              "value": "View Open Roles",
+              "href": "https://example.com/careers",
+              "external": True
+            }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+{% endblock %}
+

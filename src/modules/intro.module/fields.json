@@ -3,7 +3,7 @@
     "label": "Section ID (anchor)",
     "name": "section_id",
     "type": "text",
-    "default": "cap-intro"
+    "default": "ms-intro"
   },
   {
     "label": "Eyebrow",
@@ -15,20 +15,20 @@
     "label": "Heading",
     "name": "heading",
     "type": "text",
-    "default": "More than workforce housing."
+    "default": "Lorem Ipsum Dolor Sit Amet"
   },
   {
     "label": "Lead paragraph",
     "name": "lead",
     "type": "richtext",
     "enabled_features": ["standard_emphasis", "alignment"],
-    "default": "<p>Caprock is a welcoming, service-driven community designed to help guests recharge, connect, and feel supported throughout their stay.</p>"
+    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   },
   {
     "label": "Body text",
     "name": "content",
     "type": "richtext",
     "enabled_features": ["standard_emphasis", "alignment", "lists"],
-    "default": "<p>From modern single-occupancy accommodations to energizing recreation spaces and a variety of dining options, every aspect of the community is thoughtfully designed to support your daily life, wellbeing, and sense of connection.</p>"
+    "default": "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>"
   }
 ]

@@ -1,7 +1,7 @@
-<footer id="cap-footer">
-  <div class="cap-footer-inner">
-    <div class="cap-footer-brand">
-      <a class="cap-footer-logo" href="/" aria-label="{{ module.logo.alt|escape_attr }} -- home">
+<footer id="ms-footer">
+  <div class="ms-footer-inner">
+    <div class="ms-footer-brand">
+      <a class="ms-footer-logo" href="/" aria-label="{{ module.logo.alt|escape_attr }} -- home">
         {% if module.logo.src %}
           <img
             src="{{ module.logo.src|escape_url }}"
@@ -14,31 +14,45 @@
         {% endif %}
       </a>
       {% if module.tagline %}
-        <p class="cap-footer-tagline">{{ module.tagline }}</p>
+        <p class="ms-footer-tagline">{{ module.tagline }}</p>
       {% endif %}
       {% if module.managed_by_logo.src %}
-        <div class="cap-footer-powered">
+        <div class="ms-footer-powered">
           {% if module.managed_by_label %}
-            <span class="cap-footer-powered-label">{{ module.managed_by_label }}</span>
+            <span class="ms-footer-powered-label">{{ module.managed_by_label }}</span>
           {% endif %}
-          <img
-            src="{{ module.managed_by_logo.src|escape_url }}"
-            alt="{{ module.managed_by_logo.alt|escape_attr }}"
-            width="{{ module.managed_by_logo.width }}"
-            height="{{ module.managed_by_logo.height }}"
-            class="cap-footer-aramark-logo"
-            loading="lazy"
-            decoding="async"
-          />
+          {% if module.managed_by_link %}
+            <a href="{{ module.managed_by_link|escape_attr }}" target="_blank" rel="noopener" aria-label="{{ module.managed_by_logo.alt|escape_attr }}">
+              <img
+                src="{{ module.managed_by_logo.src|escape_url }}"
+                alt="{{ module.managed_by_logo.alt|escape_attr }}"
+                width="{{ module.managed_by_logo.width }}"
+                height="{{ module.managed_by_logo.height }}"
+                class="ms-footer-aramark-logo"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          {% else %}
+            <img
+              src="{{ module.managed_by_logo.src|escape_url }}"
+              alt="{{ module.managed_by_logo.alt|escape_attr }}"
+              width="{{ module.managed_by_logo.width }}"
+              height="{{ module.managed_by_logo.height }}"
+              class="ms-footer-aramark-logo"
+              loading="lazy"
+              decoding="async"
+            />
+          {% endif %}
         </div>
       {% endif %}
     </div>
 
     {% if module.columns|length > 0 %}
-      <div class="cap-footer-cols">
+      <div class="ms-footer-cols">
         {% for column in module.columns %}
-          <section class="cap-footer-col">
-            <h2 class="cap-footer-heading">{{ column.heading }}</h2>
+          <section class="ms-footer-col">
+            <h2 class="ms-footer-heading">{{ column.heading }}</h2>
             <ul>
               {% for link in column.links %}
                 <li>
@@ -56,7 +70,7 @@
     {% endif %}
   </div>
 
-  <div class="cap-footer-base">
+  <div class="ms-footer-base">
     <span>{{ module.copyright_text }}</span>
   </div>
 </footer>

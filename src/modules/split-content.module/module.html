@@ -1,11 +1,11 @@
-<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="cap-section cap-section--light cap-split{% if module.reverse %} cap-split--reverse{% endif %}">
-  <div class="cap-container cap-split-grid">
-    <div class="cap-split-media{% if module.media_type == 'carousel' %} cap-carousel{% endif %}"{% if module.media_type == 'carousel' %} aria-label="Image gallery"{% endif %}>
+<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="ms-section ms-section--light ms-split{% if module.reverse %} ms-split--reverse{% endif %}">
+  <div class="ms-container ms-split-grid">
+    <div class="ms-split-media{% if module.media_type == 'carousel' %} ms-carousel{% endif %}"{% if module.media_type == 'carousel' %} aria-label="Image gallery"{% endif %}>
       {% if module.media_type == "carousel" and module.gallery|length > 0 %}
-        <div class="cap-carousel-track">
+        <div class="ms-carousel-track">
           {% for slide in module.gallery %}
             {% if slide.image.src %}
-              <div class="cap-carousel-slide">
+              <div class="ms-carousel-slide">
                 <img
                   src="{{ slide.image.src|escape_url }}"
                   alt="{{ slide.alt|escape_attr }}"
@@ -17,15 +17,15 @@
           {% endfor %}
         </div>
         {% if module.gallery|length > 1 %}
-          <button class="cap-carousel-btn cap-carousel-btn--prev" aria-label="Previous image" type="button">
+          <button class="ms-carousel-btn ms-carousel-btn--prev" aria-label="Previous image" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
-          <button class="cap-carousel-btn cap-carousel-btn--next" aria-label="Next image" type="button">
+          <button class="ms-carousel-btn ms-carousel-btn--next" aria-label="Next image" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-          <div class="cap-carousel-dots" role="tablist" aria-label="Slide controls">
+          <div class="ms-carousel-dots" role="tablist" aria-label="Slide controls">
             {% for slide in module.gallery %}
-              <button class="cap-carousel-dot{% if loop.first %} cap-carousel-dot--active{% endif %}" role="tab" aria-selected="{{ loop.first|lower }}" aria-label="Slide {{ loop.index }}" data-index="{{ loop.index0 }}" type="button"></button>
+              <button class="ms-carousel-dot{% if loop.first %} ms-carousel-dot--active{% endif %}" role="tab" aria-selected="{{ loop.first|lower }}" aria-label="Slide {{ loop.index }}" data-index="{{ loop.index0 }}" type="button"></button>
             {% endfor %}
           </div>
         {% endif %}
@@ -38,13 +38,13 @@
         />
       {% endif %}
     </div>
-    <div class="cap-split-body">
-      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
-      <span class="cap-rule"></span>
-      <h2 class="cap-h2">{{ module.heading }}</h2>
-      {% if module.lead %}<div class="cap-lead">{{ module.lead|sanitize_html }}</div>{% endif %}
+    <div class="ms-split-body">
+      {% if module.eyebrow %}<span class="ms-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="ms-rule"></span>
+      <h2 class="ms-h2">{{ module.heading }}</h2>
+      {% if module.lead %}<div class="ms-lead">{{ module.lead|sanitize_html }}</div>{% endif %}
       {% if module.feature_list|length > 0 %}
-        <ul class="cap-feature-list">
+        <ul class="ms-feature-list">
           {% for feature in module.feature_list %}
             <li>{{ feature.title }}</li>
           {% endfor %}

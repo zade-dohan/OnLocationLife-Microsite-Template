@@ -1,6 +1,6 @@
-<section id="{{ module.section_id|escape_attr }}" class="cap-hero">
+<section id="{{ module.section_id|escape_attr }}" class="ms-hero">
   {% if module.background_image.src %}
-    <div class="cap-hero-bg" aria-hidden="true">
+    <div class="ms-hero-bg" aria-hidden="true">
       <img
         src="{{ module.background_image.src|escape_url }}"
         alt=""
@@ -10,33 +10,33 @@
         decoding="async"
       />
     </div>
-    <div class="cap-hero-scrim" aria-hidden="true"></div>
+    <div class="ms-hero-scrim" aria-hidden="true"></div>
   {% endif %}
-  <div class="cap-hero-content cap-container">
+  <div class="ms-hero-content ms-container">
     {% if module.emblem_image.src %}
       <img
         src="{{ module.emblem_image.src|escape_url }}"
         alt=""
         width="{{ module.emblem_image.width }}"
         height="{{ module.emblem_image.height }}"
-        class="cap-hero-emblem"
+        class="ms-hero-emblem"
         aria-hidden="true"
         loading="eager"
       />
     {% endif %}
     {% if module.eyebrow %}
-      <span class="cap-eyebrow cap-hero-eyebrow">{{ module.eyebrow }}</span>
+      <span class="ms-eyebrow ms-hero-eyebrow">{{ module.eyebrow }}</span>
     {% endif %}
-    <h1 class="cap-hero-title">{{ module.title }}</h1>
+    <h1 class="ms-hero-title">{{ module.title }}</h1>
     {% if module.subtitle %}
-      <p class="cap-sub cap-hero-sub">{{ module.subtitle }}</p>
+      <p class="ms-sub ms-hero-sub">{{ module.subtitle }}</p>
     {% endif %}
     {% if module.intro %}
-      <p class="cap-hero-intro">{{ module.intro }}</p>
+      <p class="ms-hero-intro">{{ module.intro }}</p>
     {% endif %}
     {% if module.show_cta and module.cta_label %}
-      <div class="cap-hero-ctas">
-        <a href="{{ module.cta_link|escape_attr }}" class="cap-btn">{{ module.cta_label }}</a>
+      <div class="ms-hero-ctas">
+        <a href="{{ module.cta_link|escape_attr }}" class="ms-btn">{{ module.cta_label }}</a>
       </div>
     {% endif %}
   </div>
