@@ -1,0 +1,100 @@
+[
+  {
+    "label": "Section ID (anchor)",
+    "name": "section_id",
+    "type": "text",
+    "default": "cap-life-on-site"
+  },
+  {
+    "label": "Background image",
+    "name": "background_image",
+    "type": "image",
+    "default": {
+      "src": "../images/41171235363574b777c8f2f1e8daf86ad0b99d01-1200x800.jpg",
+      "alt": "",
+      "width": 1200,
+      "height": 800,
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Eyebrow",
+    "name": "eyebrow",
+    "type": "text",
+    "default": "Life on Site"
+  },
+  {
+    "label": "Heading",
+    "name": "heading",
+    "type": "text",
+    "default": "Designed for the whole day."
+  },
+  {
+    "label": "Intro text",
+    "name": "intro",
+    "type": "richtext",
+    "enabled_features": ["standard_emphasis"],
+    "default": "<p>After the workday, stay active, share a meal with coworkers, or take time to reset. Every experience is built around comfort, convenience, and connection.</p>"
+  },
+  {
+    "label": "Amenities",
+    "name": "items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4,
+      "sorting_label_field": "items.title"
+    },
+    "children": [
+      {
+        "label": "Icon",
+        "name": "icon",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["bed", "Single occupancy / bed"],
+          ["dining", "Dining"],
+          ["transport", "Transportation"],
+          ["shield", "Security / guest services"]
+        ],
+        "default": "bed"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Amenity title"
+      },
+      {
+        "label": "Description",
+        "name": "text",
+        "type": "text",
+        "allow_new_line": true,
+        "default": "Amenity description."
+      }
+    ],
+    "default": [
+      {
+        "icon": "bed",
+        "title": "Single Occupancy Rooms",
+        "text": "Private, fully furnished rooms with climate control and Wi-Fi. Weekly housekeeping services available to guests."
+      },
+      {
+        "icon": "dining",
+        "title": "On-Site Dining",
+        "text": "Freshly prepared meals, grab-and-go, and food trucks. Coffee Bar and Barbeque Kitchen coming soon."
+      },
+      {
+        "icon": "transport",
+        "title": "Transportation Services",
+        "text": "Reliable transportation services to and from your work site."
+      },
+      {
+        "icon": "shield",
+        "title": "Guest & Security Services",
+        "text": "Caprock supports 24/7 on site guest services and security."
+      }
+    ]
+  }
+]

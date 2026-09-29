@@ -1,0 +1,1357 @@
+/* ====================================================
+    On Location Properties Theme
+    Ported from the Caprock static HTML/CSS source.
+    Class names keep the original `cap-` namespace so the
+    rendered markup and visuals match the source 1:1.
+    Brand colors/fonts are re-asserted as CSS custom
+    properties in templates/base.html from theme.json
+    fields, so this file's :root block is the Caprock
+    default/fallback, not the only source of truth.
+==================================================== */
+
+/* ====================================================
+    FONTS
+==================================================== */
+@font-face {
+    font-family: "Empera";
+    src: url('../fonts/empera-regular.otf') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gelica";
+    src: url('../fonts/Gelica-Regular.otf') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gotham";
+    src: url('../fonts/Gotham Book.otf') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ====================================================
+    BRAND TOKENS (Caprock defaults; overridden per-property
+    via theme fields -- see templates/base.html)
+==================================================== */
+:root {
+    --gold: #cfb799;
+    --evergreen: #12372f;
+    --white: #ffffff;
+    --lightGray: #dcddde;
+    --ashGray: #2f2f2f;
+    --black: #000000;
+
+    --bg: var(--black);
+    --bgAlt: var(--ashGray);
+    --bgInverse: var(--white);
+    --text: var(--lightGray);
+    --textStrong: var(--white);
+    --textOnDark: var(--white);
+    --accent: var(--gold);
+    --rule: var(--ashGray);
+
+    --font-empera: "Empera", Georgia, serif;
+    --font-gelica: "Gelica", Georgia, serif;
+    --font-gotham: "Gotham", system-ui, Arial, sans-serif;
+
+    --eyebrowSize: clamp(0.75rem, 1.1vw, 0.875rem);
+    --heroSize: clamp(2.25rem, 6vw, 5rem);
+    --h2Size: clamp(2rem, 4.4vw, 3.5rem);
+    --h3Size: clamp(1.25rem, 2vw, 1.625rem);
+    --subSize: clamp(1.125rem, 1.8vw, 1.5rem);
+    --bodySize: 1rem;
+    --smallSize: 0.875rem;
+
+    --maxWidth: 80rem;
+    --gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --sectionPadding: clamp(4rem, 9vw, 7.5rem) var(--gutter);
+
+    --btn-radius: 0px;
+}
+
+/* ====================================================
+    RESET & BASE
+==================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    font-family: var(--font-gotham);
+    font-size: 100%;
+    color: var(--text);
+    background-color: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HubSpot wrapper -- ensures black bg even when HubSpot controls <body> */
+.cap-page {
+    background-color: #000000;
+    color: var(--lightGray);
+    font-family: var(--font-gotham);
+    overflow-x: hidden;
+}
+
+body {
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover,
+button:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ====================================================
+    TYPOGRAPHY
+==================================================== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--textStrong);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+}
+
+.cap-hero-title {
+    font-family: var(--font-empera);
+    font-size: var(--heroSize);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+}
+
+.cap-h2 {
+    font-family: var(--font-empera);
+    font-size: var(--h2Size);
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+}
+
+.cap-h3 {
+    font-family: var(--font-empera);
+    font-size: var(--h3Size);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.cap-sub {
+    font-family: var(--font-gelica);
+    font-size: var(--subSize);
+    font-weight: 500;
+    line-height: 1.3;
+    font-style: italic;
+}
+
+.cap-eyebrow {
+    display: inline-block;
+    font-family: var(--font-gelica);
+    font-size: var(--eyebrowSize);
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+p {
+    font-family: var(--font-gotham);
+    font-size: var(--bodySize);
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.cap-lead {
+    font-family: var(--font-gotham);
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+    line-height: 1.5;
+    color: var(--text);
+    font-weight: 400;
+}
+
+/* ====================================================
+    BUTTONS
+==================================================== */
+.cap-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: var(--font-gotham);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    min-height: 3rem;
+    background-color: var(--btn-primary-bg, var(--gold));
+    color: var(--btn-primary-text, var(--black));
+    border: 1px solid var(--btn-primary-bg, var(--gold));
+    border-radius: var(--btn-radius, 0px);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.cap-btn:hover,
+.cap-btn:focus-visible {
+    background-color: transparent;
+    color: var(--btn-hover-accent, var(--gold));
+}
+
+.cap-btn--ghost {
+    background-color: transparent;
+    color: var(--btn-secondary-color, var(--white));
+    border-color: var(--btn-secondary-color, var(--white));
+}
+
+.cap-btn--ghost:hover,
+.cap-btn--ghost:focus-visible {
+    background-color: var(--btn-hover-accent, var(--gold));
+    color: var(--black);
+    border-color: var(--btn-hover-accent, var(--gold));
+}
+
+/* ====================================================
+    LAYOUT HELPERS
+==================================================== */
+.cap-container {
+    width: 100%;
+    max-width: var(--maxWidth);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
+
+.cap-section {
+    padding: var(--sectionPadding);
+}
+
+.cap-section--dark {
+    background-color: var(--black);
+    color: var(--textOnDark);
+}
+
+.cap-section--dark h1,
+.cap-section--dark h2,
+.cap-section--dark h3,
+.cap-section--dark h4,
+.cap-section--dark h5,
+.cap-section--dark h6 {
+    color: var(--white);
+}
+
+.cap-section--dark p,
+.cap-section--dark li {
+    color: var(--lightGray);
+}
+
+.cap-rule {
+    display: block;
+    width: 3rem;
+    height: 1px;
+    background-color: var(--accent);
+    margin: 0 0 1.5rem;
+}
+
+/* ====================================================
+    ACCESSIBILITY
+==================================================== */
+.sr-only,
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.skip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--black);
+    color: var(--gold);
+    padding: 0.75rem 1rem;
+    transform: translateY(-200%);
+    z-index: 99999;
+    transition: transform 0.2s;
+}
+
+.skip:focus {
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    body,
+    html {
+    font-size: 0.95vw;
+    }
+}
+
+/* ====================================================
+    HEADER / NAV
+==================================================== */
+#cs-navigation {
+    font-family: var(--font-gotham);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cap-nav-inner {
+    max-width: var(--maxWidth);
+    margin-inline: auto;
+    padding: 1rem var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.cap-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 1100;
+    line-height: 0;
+}
+
+.cap-logo img {
+    display: block;
+    height: 2.5rem;
+    width: auto;
+    max-width: 13.75rem;
+    object-fit: contain;
+}
+
+.cap-nav {
+    display: flex;
+    align-items: center;
+}
+
+.cap-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.cap-toggle-line {
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background-color: var(--white);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.cap-toggle.cs-active .cap-toggle-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.cap-toggle.cs-active .cap-toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.cap-toggle.cs-active .cap-toggle-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.cap-nav-panel {
+    position: fixed;
+    inset: 0;
+    background-color: var(--black);
+    padding: 6rem var(--gutter) 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 1050;
+}
+
+#cs-navigation.cs-active .cap-nav-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cap-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cap-nav-link {
+    font-family: var(--font-empera);
+    font-size: clamp(2rem, 7vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--white);
+    line-height: 1.1;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cap-nav-link:hover,
+.cap-nav-link:focus-visible {
+    color: var(--gold);
+}
+
+.cap-nav-settings {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cap-lang-mobile {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0.75rem;
+}
+
+body.cs-open {
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 64rem) {
+    .cap-toggle {
+    display: none;
+    }
+
+    .cap-nav-panel {
+    position: static;
+    inset: auto;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    }
+
+    .cap-nav-list {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    }
+
+    .cap-nav-link {
+    font-family: var(--font-gotham);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--white);
+    padding-bottom: 0.25rem;
+    position: relative;
+    }
+
+    .cap-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    }
+
+    .cap-nav-link:hover::after,
+    .cap-nav-link:focus-visible::after {
+    transform: scaleX(1);
+    }
+
+    .cap-nav-link:hover {
+    color: var(--gold);
+    }
+
+    .cap-nav-settings {
+    padding-top: 0;
+    border: none;
+    }
+
+    .cap-lang-mobile {
+    display: none;
+    }
+}
+
+/* ====================================================
+    HERO
+==================================================== */
+.cap-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.cap-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.cap-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cap-hero-scrim {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.cap-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-block: clamp(5rem, 12vw, 9rem);
+    max-width: 60rem;
+}
+
+.cap-hero-emblem {
+    width: 4rem;
+    height: auto;
+    margin-bottom: 1.75rem;
+    opacity: 0.95;
+}
+
+.cap-hero-eyebrow {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.cap-hero-title {
+    color: var(--white);
+    max-width: 18ch;
+    margin-bottom: 1.5rem;
+}
+
+.cap-hero-sub {
+    color: var(--lightGray);
+    margin-bottom: 2rem;
+    max-width: 30ch;
+}
+
+.cap-hero-intro {
+    color: var(--lightGray);
+    max-width: 40rem;
+    margin-bottom: 2.5rem;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.cap-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ====================================================
+    INTRO
+==================================================== */
+.cap-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.cap-intro-body p + p {
+    margin-top: 1.25rem;
+}
+
+@media (min-width: 64rem) {
+    .cap-intro-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+    }
+}
+
+/* ====================================================
+    SECTION HEAD
+==================================================== */
+.cap-section-head {
+    max-width: 44rem;
+    margin-bottom: 3.5rem;
+}
+
+.cap-section-intro {
+    margin-top: 1.5rem;
+    max-width: 38rem;
+}
+
+/* ====================================================
+    COMING SOON
+==================================================== */
+.cap-coming-soon-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.cap-coming-soon-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+}
+
+.cap-coming-soon-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.cap-coming-soon-item p {
+    font-size: 0.9375rem;
+    color: var(--text);
+}
+
+@media (min-width: 40rem) {
+    .cap-coming-soon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64rem) {
+    .cap-coming-soon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ====================================================
+    VIDEO SECTION
+==================================================== */
+.cap-video-section {
+    background-color: var(--black);
+}
+
+.cap-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border: 1px solid rgba(207, 183, 153, 0.2);
+}
+
+.cap-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ====================================================
+    AMENITIES
+==================================================== */
+.cap-amenities-parallax {
+    position: relative;
+    background-image: var(--amenities-bg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--white);
+}
+
+@media (max-width: 63.9375rem) {
+    .cap-amenities-parallax {
+    background-attachment: scroll;
+    }
+}
+
+.cap-amenities-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.78);
+    z-index: 0;
+}
+
+.cap-amenities-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cap-amenities-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0;
+    list-style: none;
+}
+
+.cap-amenity {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background-color 0.25s ease;
+}
+
+.cap-amenity:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.cap-amenity p {
+    color: var(--lightGray);
+    font-size: 0.9375rem;
+}
+
+.cap-amenity-icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.cap-amenity-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 40rem) {
+    .cap-amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ====================================================
+    SPLIT SECTIONS (HOUSING / DINING)
+==================================================== */
+.cap-split-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.cap-split-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+    display: block;
+}
+
+.cap-split-body p {
+    margin-top: 1.25rem;
+}
+
+.cap-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.875rem 1.5rem;
+}
+
+.cap-feature-list li {
+    font-family: var(--font-gotham);
+    font-size: 0.9375rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text);
+}
+
+.cap-feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.625rem;
+    width: 0.625rem;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+@media (min-width: 64rem) {
+    .cap-split-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    }
+
+    .cap-split--reverse .cap-split-grid {
+    direction: rtl;
+    }
+
+    .cap-split--reverse .cap-split-grid > * {
+    direction: ltr;
+    }
+}
+
+/* ====================================================
+    FINAL CTA
+==================================================== */
+.cap-cta-new {
+    position: relative;
+    background-image: var(--cta-bg);
+    background-size: cover;
+    background-position: center 30%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: clamp(5rem, 12vw, 9rem) 0;
+}
+
+@media (max-width: 63.9375rem) {
+    .cap-cta-new {
+    background-attachment: scroll;
+    }
+}
+
+.cap-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.84);
+    z-index: 0;
+}
+
+.cap-cta-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.cap-cta-messaging {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.cap-cta-emblem {
+    width: 4rem;
+    height: auto;
+    opacity: 0.55;
+}
+
+.cap-cta-eyebrow {
+    color: var(--gold);
+}
+
+.cap-cta-title {
+    font-family: var(--font-empera);
+    font-size: clamp(2.75rem, 6vw, 5rem);
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.0;
+    max-width: 18ch;
+}
+
+.cap-cta-sub {
+    font-family: var(--font-gelica);
+    font-style: italic;
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+    color: var(--lightGray);
+    max-width: 34ch;
+}
+
+.cap-cta-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.cap-cta-contact {
+    border: 1px solid rgba(207, 183, 153, 0.35);
+    display: flex;
+    flex-direction: column;
+}
+
+.cap-cta-divider {
+    height: 1px;
+    background-color: rgba(207, 183, 153, 0.2);
+}
+
+.cap-cta-contact-item {
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cap-cta-contact-label {
+    font-family: var(--font-gotham);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.cap-cta-contact-value {
+    font-family: var(--font-gotham);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    color: var(--white);
+    text-decoration: none;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+}
+
+.cap-cta-contact-value:hover,
+.cap-cta-contact-value:focus-visible {
+    color: var(--gold);
+}
+
+@media (min-width: 64rem) {
+    .cap-cta-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    }
+}
+
+/* ====================================================
+    FOOTER
+==================================================== */
+#cap-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: clamp(3.5rem, 8vw, 6rem) 0 0;
+    font-family: var(--font-gotham);
+}
+
+.cap-footer-inner {
+    max-width: var(--maxWidth);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+}
+
+.cap-footer-brand {
+    max-width: 22rem;
+}
+
+.cap-footer-logo {
+    line-height: 0;
+    display: inline-block;
+}
+
+.cap-footer-logo img {
+    display: block;
+    height: 2.75rem;
+    width: auto;
+    max-width: 15rem;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.cap-footer-tagline {
+    font-family: var(--font-gelica);
+    font-style: italic;
+    font-size: 1.0625rem;
+    color: var(--lightGray);
+    line-height: 1.5;
+}
+
+.cap-footer-powered {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cap-footer-powered-label {
+    font-family: var(--font-gotham);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(220, 221, 222, 0.5);
+    white-space: nowrap;
+}
+
+.cap-footer-aramark-logo {
+    display: block;
+    height: 1.375rem;
+    width: auto;
+    max-width: 9rem;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.cap-footer-aramark-logo:hover {
+    opacity: 1;
+}
+
+.cap-footer-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2.5rem;
+}
+
+.cap-footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.cap-footer-col a {
+    color: var(--lightGray);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+}
+
+.cap-footer-col a:hover,
+.cap-footer-col a:focus-visible {
+    color: var(--gold);
+}
+
+.cap-footer-heading {
+    font-family: var(--font-gotham);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid rgba(207, 183, 153, 0.25);
+}
+
+.cap-footer-base {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem var(--gutter);
+    max-width: var(--maxWidth);
+    margin-inline: auto;
+    font-size: 0.8125rem;
+    letter-spacing: 0.05em;
+    color: var(--lightGray);
+    text-align: center;
+}
+
+@media only screen and (min-width: 48rem) {
+    .cap-footer-inner {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: start;
+    gap: 4rem;
+    }
+
+    .cap-footer-base {
+    text-align: left;
+    }
+}
+
+/* ====================================================
+    COMMUNITY CODE OF CONDUCT -- ACCORDION
+==================================================== */
+.cap-conduct .cap-section-head {
+    max-width: 52rem;
+}
+
+.cap-accordion {
+    border-top: 1px solid rgba(207, 183, 153, 0.2);
+}
+
+.cap-accordion-item {
+    border-bottom: 1px solid rgba(207, 183, 153, 0.2);
+}
+
+.cap-accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--white);
+}
+
+.cap-accordion-trigger:hover .cap-accordion-label,
+.cap-accordion-trigger:focus-visible .cap-accordion-label {
+    color: var(--gold);
+}
+
+.cap-accordion-label {
+    font-family: var(--font-empera);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    transition: color 0.2s ease;
+}
+
+.cap-accordion-icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    color: var(--gold);
+}
+
+/* Horizontal bar (always visible) */
+.cap-accordion-icon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: currentColor;
+    transform: translateY(-50%);
+}
+
+/* Vertical bar (hidden when open = minus) */
+.cap-accordion-icon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background-color: currentColor;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cap-accordion-trigger[aria-expanded="true"] .cap-accordion-icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+}
+
+.cap-accordion-panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+}
+
+.cap-accordion-panel--open {
+    max-height: 40rem;
+}
+
+.cap-conduct-list,
+.cap-accordion-panel ul {
+    list-style: none;
+    padding: 0 0 1.75rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.cap-conduct-list li,
+.cap-accordion-panel ul li {
+    font-family: var(--font-gotham);
+    font-size: var(--bodySize);
+    color: var(--lightGray);
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.cap-conduct-list li::before,
+.cap-accordion-panel ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6875rem;
+    width: 0.625rem;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+.cap-conduct-list strong,
+.cap-accordion-panel strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* ====================================================
+    CAROUSEL
+==================================================== */
+.cap-carousel {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+
+.cap-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cap-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.cap-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: unset;
+}
+
+/* Prev / Next buttons */
+.cap-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(207, 183, 153, 0.35);
+    color: var(--white);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.cap-carousel-btn:hover,
+.cap-carousel-btn:focus-visible {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+}
+
+.cap-carousel-btn--prev {
+    left: 0.75rem;
+}
+
+.cap-carousel-btn--next {
+    right: 0.75rem;
+}
+
+/* Dot indicators */
+.cap-carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.cap-carousel-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(207, 183, 153, 0.6);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cap-carousel-dot--active {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.3);
+}
+
+/* Coming soon items and amenity cards should collapse cleanly when an
+   editor removes optional repeater items -- no empty gaps or borders. */
+.cap-amenities-grid:empty,
+.cap-coming-soon-grid:empty,
+.cap-footer-cols:empty {
+    display: none;
+}

@@ -1,0 +1,35 @@
+{% set amenity_icons = {
+  "bed": '<path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v6H2"/><path d="M2 14h20"/><path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>',
+  "dining": '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>',
+  "transport": '<rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+  "shield": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'
+} %}
+<section
+  id="{{ module.section_id|escape_attr }}"
+  class="cap-section cap-amenities-parallax"
+  {% if module.background_image.src %}style="--amenities-bg: url({{ module.background_image.src|escape_attr }})"{% endif %}
+>
+  <div class="cap-amenities-overlay" aria-hidden="true"></div>
+  <div class="cap-container cap-amenities-content">
+    <header class="cap-section-head">
+      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="cap-rule"></span>
+      <h2 class="cap-h2">{{ module.heading }}</h2>
+      {% if module.intro %}<div class="cap-section-intro">{{ module.intro|sanitize_html }}</div>{% endif %}
+    </header>
+
+    <ul class="cap-amenities-grid">
+      {% for item in module.items %}
+        <li class="cap-amenity">
+          <span class="cap-amenity-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              {{ amenity_icons[item.icon] }}
+            </svg>
+          </span>
+          <h3 class="cap-h3">{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

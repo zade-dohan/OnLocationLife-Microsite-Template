@@ -1,0 +1,21 @@
+<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="cap-section cap-section--dark cap-video-section">
+  <div class="cap-container">
+    <header class="cap-section-head">
+      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="cap-rule"></span>
+      <h2 class="cap-h2">{{ module.heading }}</h2>
+    </header>
+    {% if module.video_embed_url %}
+      <div class="cap-video-wrapper">
+        <iframe
+          src="{{ module.video_embed_url|escape_attr }}"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          allowfullscreen
+          title="{{ module.video_title|escape_attr }}"
+          loading="lazy"
+        ></iframe>
+      </div>
+    {% endif %}
+  </div>
+</section>

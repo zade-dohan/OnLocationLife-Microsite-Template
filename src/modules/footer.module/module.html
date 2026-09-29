@@ -1,0 +1,62 @@
+<footer id="cap-footer">
+  <div class="cap-footer-inner">
+    <div class="cap-footer-brand">
+      <a class="cap-footer-logo" href="/" aria-label="{{ module.logo.alt|escape_attr }} -- home">
+        {% if module.logo.src %}
+          <img
+            src="{{ module.logo.src|escape_url }}"
+            alt="{{ module.logo.alt|escape_attr }}"
+            width="{{ module.logo.width }}"
+            height="{{ module.logo.height }}"
+            loading="lazy"
+            decoding="async"
+          />
+        {% endif %}
+      </a>
+      {% if module.tagline %}
+        <p class="cap-footer-tagline">{{ module.tagline }}</p>
+      {% endif %}
+      {% if module.managed_by_logo.src %}
+        <div class="cap-footer-powered">
+          {% if module.managed_by_label %}
+            <span class="cap-footer-powered-label">{{ module.managed_by_label }}</span>
+          {% endif %}
+          <img
+            src="{{ module.managed_by_logo.src|escape_url }}"
+            alt="{{ module.managed_by_logo.alt|escape_attr }}"
+            width="{{ module.managed_by_logo.width }}"
+            height="{{ module.managed_by_logo.height }}"
+            class="cap-footer-aramark-logo"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      {% endif %}
+    </div>
+
+    {% if module.columns|length > 0 %}
+      <div class="cap-footer-cols">
+        {% for column in module.columns %}
+          <section class="cap-footer-col">
+            <h2 class="cap-footer-heading">{{ column.heading }}</h2>
+            <ul>
+              {% for link in column.links %}
+                <li>
+                  {% if link.external %}
+                    <a href="{{ link.href|escape_attr }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+                  {% else %}
+                    <a href="{{ link.href|escape_attr }}">{{ link.title }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="cap-footer-base">
+    <span>{{ module.copyright_text }}</span>
+  </div>
+</footer>

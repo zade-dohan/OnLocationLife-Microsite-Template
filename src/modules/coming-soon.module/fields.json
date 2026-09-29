@@ -1,0 +1,51 @@
+[
+  {
+    "label": "Section ID (anchor)",
+    "name": "section_id",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "label": "Eyebrow",
+    "name": "eyebrow",
+    "type": "text",
+    "default": "Coming Soon"
+  },
+  {
+    "label": "Heading",
+    "name": "heading",
+    "type": "text",
+    "default": "Coming Soon"
+  },
+  {
+    "label": "Items",
+    "name": "items",
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": 6,
+      "default": 3,
+      "sorting_label_field": "items.title"
+    },
+    "children": [
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Coming soon item"
+      },
+      {
+        "label": "Description",
+        "name": "text",
+        "type": "text",
+        "allow_new_line": true,
+        "default": "Description of what's coming soon."
+      }
+    ],
+    "default": [
+      { "title": "Recreation and Fitness Center", "text": "Soccer fields, pickleball, basketball, and golf simulator." },
+      { "title": "RV Parking", "text": "Full-service RV parking with access to every amenity." },
+      { "title": "Retail and Convenience Stores", "text": "Everyday essentials available anytime, day or night." }
+    ]
+  }
+]

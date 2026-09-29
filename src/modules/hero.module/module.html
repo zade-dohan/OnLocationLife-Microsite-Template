@@ -1,0 +1,43 @@
+<section id="{{ module.section_id|escape_attr }}" class="cap-hero">
+  {% if module.background_image.src %}
+    <div class="cap-hero-bg" aria-hidden="true">
+      <img
+        src="{{ module.background_image.src|escape_url }}"
+        alt=""
+        width="{{ module.background_image.width }}"
+        height="{{ module.background_image.height }}"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+    <div class="cap-hero-scrim" aria-hidden="true"></div>
+  {% endif %}
+  <div class="cap-hero-content cap-container">
+    {% if module.emblem_image.src %}
+      <img
+        src="{{ module.emblem_image.src|escape_url }}"
+        alt=""
+        width="{{ module.emblem_image.width }}"
+        height="{{ module.emblem_image.height }}"
+        class="cap-hero-emblem"
+        aria-hidden="true"
+        loading="eager"
+      />
+    {% endif %}
+    {% if module.eyebrow %}
+      <span class="cap-eyebrow cap-hero-eyebrow">{{ module.eyebrow }}</span>
+    {% endif %}
+    <h1 class="cap-hero-title">{{ module.title }}</h1>
+    {% if module.subtitle %}
+      <p class="cap-sub cap-hero-sub">{{ module.subtitle }}</p>
+    {% endif %}
+    {% if module.intro %}
+      <p class="cap-hero-intro">{{ module.intro }}</p>
+    {% endif %}
+    {% if module.show_cta and module.cta_label %}
+      <div class="cap-hero-ctas">
+        <a href="{{ module.cta_link|escape_attr }}" class="cap-btn">{{ module.cta_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>

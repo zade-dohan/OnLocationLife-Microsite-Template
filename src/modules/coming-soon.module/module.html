@@ -1,0 +1,19 @@
+{% if module.items|length > 0 %}
+<section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="cap-section cap-section--light cap-coming-soon">
+  <div class="cap-container">
+    <header class="cap-section-head">
+      {% if module.eyebrow %}<span class="cap-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+      <span class="cap-rule"></span>
+      <h2 class="cap-h2">{{ module.heading }}</h2>
+    </header>
+    <ul class="cap-coming-soon-grid">
+      {% for item in module.items %}
+        <li class="cap-coming-soon-item">
+          <h3 class="cap-h3">{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

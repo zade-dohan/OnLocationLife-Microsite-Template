@@ -1,0 +1,98 @@
+[
+  {
+    "label": "Section ID (anchor)",
+    "name": "section_id",
+    "type": "text",
+    "default": "cap-contact"
+  },
+  {
+    "label": "Background image",
+    "name": "background_image",
+    "type": "image",
+    "default": {
+      "src": "../images/ram-rodeo-yun-wang.jpg",
+      "alt": "",
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Emblem image",
+    "name": "emblem_image",
+    "type": "image",
+    "default": {
+      "src": "../images/Caprock-Emblem-Iso-white.png",
+      "alt": "",
+      "width": 72,
+      "height": 72,
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Eyebrow",
+    "name": "eyebrow",
+    "type": "text",
+    "default": "Get In Touch"
+  },
+  {
+    "label": "Heading",
+    "name": "heading",
+    "type": "text",
+    "default": "Ready to call Caprock home?"
+  },
+  {
+    "label": "Subtext",
+    "name": "subtext",
+    "type": "text",
+    "default": "Questions about Caprock? We're here to help."
+  },
+  {
+    "label": "CTA label",
+    "name": "cta_label",
+    "type": "text",
+    "default": "Contact For General Information"
+  },
+  {
+    "label": "CTA link",
+    "name": "cta_link",
+    "type": "text",
+    "default": "mailto:Caprock-Information@aramark.com"
+  },
+  {
+    "label": "Contact items",
+    "name": "contact_items",
+    "type": "group",
+    "occurrence": { "min": 0, "max": 6, "default": 3, "sorting_label_field": "contact_items.title" },
+    "children": [
+      { "label": "Label", "name": "title", "type": "text", "default": "Label" },
+      {
+        "label": "Value",
+        "name": "value",
+        "type": "richtext",
+        "enabled_features": ["standard_emphasis"],
+        "default": "Value"
+      },
+      { "label": "Link (URL, mailto:, or #anchor)", "name": "href", "type": "text", "default": "" },
+      { "label": "Opens in new tab", "name": "external", "type": "boolean", "default": false }
+    ],
+    "default": [
+      {
+        "title": "Email",
+        "value": "Caprock-Information@aramark.com",
+        "href": "mailto:Caprock-Information@aramark.com",
+        "external": false
+      },
+      {
+        "title": "Visit",
+        "value": "14585 Highway 152<br />Mobeetie, TX 79061",
+        "href": "https://maps.google.com/?q=14585+Highway+152+Mobeetie+TX+79061",
+        "external": true
+      },
+      {
+        "title": "Work at Caprock",
+        "value": "View Open Roles Here",
+        "href": "https://careers.aramark.com/search/?keyword=caprock&location=",
+        "external": true
+      }
+    ]
+  }
+]

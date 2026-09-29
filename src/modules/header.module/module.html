@@ -1,0 +1,42 @@
+{# Skip link must be the first focusable element on the page. #}
+<a class="skip" href="#main" aria-label="skip to main content">Skip to main content</a>
+
+<header id="cs-navigation">
+  <div class="cap-nav-inner">
+    <a href="{{ module.logo_link|escape_attr }}" class="cap-logo" aria-label="{{ module.logo.alt|escape_attr }} -- back to home">
+      {% if module.logo.src %}
+        <img
+          src="{{ module.logo.src|escape_url }}"
+          alt="{{ module.logo.alt|escape_attr }}"
+          width="{{ module.logo.width }}"
+          height="{{ module.logo.height }}"
+          decoding="async"
+          loading="eager"
+        />
+      {% endif %}
+    </a>
+
+    <nav class="cap-nav" aria-label="Primary">
+      <button
+        class="cap-toggle"
+        id="mobile-menu-toggle"
+        aria-expanded="false"
+        aria-controls="cap-nav-menu"
+        aria-label="Toggle menu"
+        type="button"
+      >
+        <span class="cap-toggle-line" aria-hidden="true"></span>
+        <span class="cap-toggle-line" aria-hidden="true"></span>
+        <span class="cap-toggle-line" aria-hidden="true"></span>
+      </button>
+
+      <div class="cap-nav-panel">
+        <ul id="cap-nav-menu" class="cap-nav-list">
+          {% for link in module.nav_links %}
+            <li><a href="{{ link.href|escape_attr }}" class="cap-nav-link">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

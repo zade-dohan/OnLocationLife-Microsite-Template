@@ -1,0 +1,117 @@
+[
+  {
+    "label": "Logo",
+    "name": "logo",
+    "type": "image",
+    "default": {
+      "src": "../images/Caprock-Secondary-4C.png",
+      "alt": "Caprock",
+      "width": 480,
+      "height": 120,
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Tagline",
+    "name": "tagline",
+    "type": "text",
+    "default": "An elevated workforce community designed for comfort, connection, and life on site."
+  },
+  {
+    "label": "\"Managed by\" label",
+    "name": "managed_by_label",
+    "type": "text",
+    "default": "Managed by"
+  },
+  {
+    "label": "\"Managed by\" logo",
+    "name": "managed_by_logo",
+    "type": "image",
+    "default": {
+      "src": "../images/nexuslogowhite.png",
+      "alt": "Aramark",
+      "width": 1756,
+      "height": 447,
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Footer columns",
+    "name": "columns",
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": 4,
+      "default": 3,
+      "sorting_label_field": "columns.heading"
+    },
+    "children": [
+      {
+        "label": "Heading",
+        "name": "heading",
+        "type": "text",
+        "default": "Column"
+      },
+      {
+        "label": "Links",
+        "name": "links",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 6,
+          "default": 1,
+          "sorting_label_field": "links.title"
+        },
+        "children": [
+          {
+            "label": "Label",
+            "name": "title",
+            "type": "text",
+            "default": "Link"
+          },
+          {
+            "label": "Link (URL, #anchor, or mailto:)",
+            "name": "href",
+            "type": "text",
+            "default": "#"
+          },
+          {
+            "label": "Opens in new tab",
+            "name": "external",
+            "type": "boolean",
+            "default": false
+          }
+        ]
+      }
+    ],
+    "default": [
+      {
+        "heading": "Explore",
+        "links": [
+          { "title": "About", "href": "#cap-intro", "external": false },
+          { "title": "Life On Site", "href": "#cap-life-on-site", "external": false },
+          { "title": "Housing", "href": "#cap-housing", "external": false },
+          { "title": "Contact", "href": "#cap-contact", "external": false }
+        ]
+      },
+      {
+        "heading": "Visit",
+        "links": [
+          { "title": "14585 Highway 152, Mobeetie, TX 79061", "href": "https://maps.google.com/?q=14585+Highway+152+Mobeetie+TX+79061", "external": true }
+        ]
+      },
+      {
+        "heading": "Connect",
+        "links": [
+          { "title": "Caprock-Information@aramark.com", "href": "mailto:Caprock-Information@aramark.com", "external": false }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Copyright text",
+    "name": "copyright_text",
+    "type": "text",
+    "default": "\u00a9 2026 Caprock. All rights reserved."
+  }
+]

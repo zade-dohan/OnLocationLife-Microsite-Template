@@ -1,0 +1,84 @@
+[
+  {
+    "label": "Section ID (anchor)",
+    "name": "section_id",
+    "type": "text",
+    "default": "cap-hero"
+  },
+  {
+    "label": "Background image",
+    "name": "background_image",
+    "type": "image",
+    "default": {
+      "src": "../images/AdobeStock.jpeg",
+      "alt": "",
+      "width": 2000,
+      "height": 1333,
+      "loading": "eager"
+    }
+  },
+  {
+    "label": "Emblem image",
+    "name": "emblem_image",
+    "type": "image",
+    "default": {
+      "src": "../images/Caprock-Emblem-Iso-white.png",
+      "alt": "",
+      "width": 72,
+      "height": 72,
+      "loading": "eager"
+    }
+  },
+  {
+    "label": "Eyebrow",
+    "name": "eyebrow",
+    "type": "text",
+    "default": "Mobeetie, Texas"
+  },
+  {
+    "label": "Title",
+    "name": "title",
+    "type": "text",
+    "default": "Discover Life at Caprock"
+  },
+  {
+    "label": "Subtitle",
+    "name": "subtitle",
+    "type": "text",
+    "default": "An Elevated Workforce Community"
+  },
+  {
+    "label": "Intro text",
+    "name": "intro",
+    "type": "text",
+    "default": "Built for people powering progress, Caprock is designed to provide a comfortable, connected, and convenient living experience while working on site."
+  },
+  {
+    "label": "Show CTA button",
+    "name": "show_cta",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "label": "CTA label",
+    "name": "cta_label",
+    "type": "text",
+    "default": "Learn More",
+    "visibility": {
+      "controlling_field": "show_cta",
+      "controlling_value_regex": "true",
+      "operator": "EQUAL"
+    }
+  },
+  {
+    "label": "CTA link (URL or #anchor)",
+    "name": "cta_link",
+    "type": "text",
+    "default": "#cap-life-on-site",
+    "visibility": {
+      "controlling_field": "show_cta",
+      "controlling_value_regex": "true",
+      "operator": "EQUAL"
+    }
+  }
+]

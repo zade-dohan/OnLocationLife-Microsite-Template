@@ -1,0 +1,79 @@
+[
+  {
+    "label": "Section ID (anchor)",
+    "name": "section_id",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "label": "Reverse layout (media on right)",
+    "name": "reverse",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "label": "Media type",
+    "name": "media_type",
+    "type": "choice",
+    "display": "radio",
+    "choices": [
+      ["image", "Single image"],
+      ["carousel", "Image carousel"]
+    ],
+    "default": "image"
+  },
+  {
+    "label": "Image",
+    "name": "image",
+    "type": "image",
+    "default": { "src": "", "alt": "", "loading": "lazy" },
+    "visibility": {
+      "controlling_field": "media_type",
+      "controlling_value_regex": "image",
+      "operator": "EQUAL"
+    }
+  },
+  {
+    "label": "Gallery images",
+    "name": "gallery",
+    "type": "group",
+    "occurrence": { "min": 0, "max": 8, "default": 0, "sorting_label_field": "gallery.alt" },
+    "children": [
+      { "label": "Image", "name": "image", "type": "image", "default": { "src": "", "loading": "lazy" } },
+      { "label": "Alt text", "name": "alt", "type": "text", "default": "" }
+    ],
+    "visibility": {
+      "controlling_field": "media_type",
+      "controlling_value_regex": "carousel",
+      "operator": "EQUAL"
+    }
+  },
+  {
+    "label": "Eyebrow",
+    "name": "eyebrow",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "label": "Heading",
+    "name": "heading",
+    "type": "text",
+    "default": "Section heading"
+  },
+  {
+    "label": "Lead paragraph",
+    "name": "lead",
+    "type": "richtext",
+    "enabled_features": ["standard_emphasis"],
+    "default": "<p>Add supporting copy here.</p>"
+  },
+  {
+    "label": "Feature list",
+    "name": "feature_list",
+    "type": "group",
+    "occurrence": { "min": 0, "max": 16, "default": 0, "sorting_label_field": "feature_list.label" },
+    "children": [
+      { "label": "Label", "name": "title", "type": "text", "default": "Feature" }
+    ]
+  }
+]

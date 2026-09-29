@@ -1,0 +1,51 @@
+[
+  {
+    "label": "Logo",
+    "name": "logo",
+    "type": "image",
+    "default": {
+      "src": "../images/Caprock-Secondary-4C.png",
+      "alt": "Caprock",
+      "width": 480,
+      "height": 120,
+      "loading": "eager"
+    }
+  },
+  {
+    "label": "Logo link",
+    "name": "logo_link",
+    "type": "text",
+    "default": "/"
+  },
+  {
+    "label": "Navigation links",
+    "name": "nav_links",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4,
+      "sorting_label_field": "nav_links.label"
+    },
+    "children": [
+      {
+        "label": "Label",
+        "name": "title",
+        "type": "text",
+        "default": "Link"
+      },
+      {
+        "label": "Link (URL or #anchor)",
+        "name": "href",
+        "type": "text",
+        "default": "#"
+      }
+    ],
+    "default": [
+      { "title": "About", "href": "#cap-intro" },
+      { "title": "Life On Site", "href": "#cap-life-on-site" },
+      { "title": "Housing", "href": "#cap-housing" },
+      { "title": "Contact", "href": "#cap-contact" }
+    ]
+  }
+]

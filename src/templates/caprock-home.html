@@ -1,0 +1,120 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Caprock Home
+-->
+{% extends "./base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content" label="Page content" %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/hero.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/intro.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/video.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/amenities.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/coming-soon.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/accordion.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {# Housing -- split-content.module reused with the carousel + feature list variant #}
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/split-content.module", width=12, offset=0,
+          section_id="cap-housing",
+          reverse=False,
+          media_type="carousel",
+          eyebrow="Housing & Accommodations",
+          heading="Modern spaces. Built for the long stay.",
+          lead="<p>Thoughtfully designed for extended stays and workforce living, our accommodations support both rest and productivity, so guests can settle in, recharge, and feel at home.</p>",
+          gallery=[
+            {
+              "image": { "src": get_asset_url("../images/KimleyHorn_CaprockWorkforceHousing_View_01_SportsCourts_052126.jpg"), "loading": "lazy" },
+              "alt": "Caprock sports courts and recreation"
+            },
+            {
+              "image": { "src": get_asset_url("../images/KimleyHorn_CaprockWorkforceHousing_View_02_parks_052126.jpg"), "loading": "lazy" },
+              "alt": "Caprock parks and outdoor spaces"
+            },
+            {
+              "image": { "src": get_asset_url("../images/KimleyHorn_CaprockWorkforceHousing_View_03_TopDown_052126.jpg"), "loading": "lazy" },
+              "alt": "Caprock aerial view of the community"
+            }
+          ],
+          feature_list=[
+            { "title": "Private Single Occupancy" },
+            { "title": "Wi-Fi & Climate Control" },
+            { "title": "Shared Social Spaces" },
+            { "title": "Fully Furnished Rooms" },
+            { "title": "On-Site Dining Services" },
+            { "title": "Weekly Housekeeping Service" },
+            { "title": "Self Service Laundry" },
+            { "title": "Package & Mail Service" },
+            { "title": "Convenience Store" }
+          ]
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {# Dining -- same split-content.module, single-image + reversed variant #}
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/split-content.module", width=12, offset=0,
+          reverse=True,
+          media_type="image",
+          eyebrow="Dining",
+          heading="Meals built around every shift.",
+          lead="<p>Breakfast before an early shift, dinner with coworkers, or a quick bite between schedules, dining at Caprock is built to support every part of the day.</p>",
+          image={
+            "src": get_asset_url("../images/c7c493ea99ee39aff6454dcc5196b3ff.jpg"),
+            "alt": "On-site dining at Caprock",
+            "loading": "lazy"
+          }
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+    {% dnd_section %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/final-cta.module", width=12, offset=0 %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+{% endblock %}

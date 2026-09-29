@@ -1,0 +1,168 @@
+[
+  {
+    "label": "Brand",
+    "name": "brand",
+    "type": "group",
+    "children": [
+      {
+        "label": "Primary brand color (accent)",
+        "name": "accent_color",
+        "type": "color",
+        "default": { "color": "#CFB799", "opacity": 100 }
+      },
+      {
+        "label": "Secondary brand color",
+        "name": "secondary_color",
+        "type": "color",
+        "default": { "color": "#12372F", "opacity": 100 }
+      },
+      {
+        "label": "Dark background color",
+        "name": "dark_bg",
+        "type": "color",
+        "default": { "color": "#000000", "opacity": 100 }
+      },
+      {
+        "label": "Alternate dark background color",
+        "name": "alt_bg",
+        "type": "color",
+        "default": { "color": "#2F2F2F", "opacity": 100 }
+      },
+      {
+        "label": "Light background color",
+        "name": "light_bg",
+        "type": "color",
+        "default": { "color": "#FFFFFF", "opacity": 100 }
+      },
+      {
+        "label": "Default text color (on dark backgrounds)",
+        "name": "default_text",
+        "type": "color",
+        "default": { "color": "#DCDDDE", "opacity": 100 }
+      },
+      {
+        "label": "Default heading / light text color",
+        "name": "default_light_text",
+        "type": "color",
+        "default": { "color": "#FFFFFF", "opacity": 100 }
+      }
+    ]
+  },
+  {
+    "label": "Typography",
+    "name": "typography",
+    "type": "group",
+    "children": [
+      {
+        "label": "Heading font (display)",
+        "name": "heading_font",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["Empera", "Empera (theme default)"],
+          ["Georgia", "Georgia"],
+          ["Arial", "Arial"]
+        ],
+        "default": "Empera"
+      },
+      {
+        "label": "Accent font (script / italic)",
+        "name": "accent_font",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["Gelica", "Gelica (theme default)"],
+          ["Georgia", "Georgia"],
+          ["Arial", "Arial"]
+        ],
+        "default": "Gelica"
+      },
+      {
+        "label": "Body font",
+        "name": "body_font",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          ["Gotham", "Gotham (theme default)"],
+          ["Arial", "Arial"],
+          ["Georgia", "Georgia"]
+        ],
+        "default": "Gotham"
+      },
+      {
+        "label": "Base body size (px)",
+        "name": "base_body_size",
+        "type": "number",
+        "default": 16
+      },
+      {
+        "label": "Body line height",
+        "name": "line_height",
+        "type": "number",
+        "default": 1.6
+      }
+    ]
+  },
+  {
+    "label": "Buttons",
+    "name": "buttons",
+    "type": "group",
+    "children": [
+      {
+        "label": "Primary button background",
+        "name": "primary_bg",
+        "type": "color",
+        "default": { "color": "#CFB799", "opacity": 100 }
+      },
+      {
+        "label": "Primary button text",
+        "name": "primary_text",
+        "type": "color",
+        "default": { "color": "#000000", "opacity": 100 }
+      },
+      {
+        "label": "Secondary (ghost) button border/text",
+        "name": "secondary_color",
+        "type": "color",
+        "default": { "color": "#FFFFFF", "opacity": 100 }
+      },
+      {
+        "label": "Button hover accent",
+        "name": "hover_accent",
+        "type": "color",
+        "default": { "color": "#CFB799", "opacity": 100 }
+      },
+      {
+        "label": "Button corner radius (px)",
+        "name": "border_radius",
+        "type": "number",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "label": "Layout",
+    "name": "layout",
+    "type": "group",
+    "children": [
+      {
+        "label": "Maximum content width (px)",
+        "name": "max_width",
+        "type": "number",
+        "default": 1280
+      },
+      {
+        "label": "Standard section spacing (px)",
+        "name": "section_spacing",
+        "type": "number",
+        "default": 120
+      },
+      {
+        "label": "Mobile section spacing (px)",
+        "name": "mobile_section_spacing",
+        "type": "number",
+        "default": 64
+      }
+    ]
+  }
+]

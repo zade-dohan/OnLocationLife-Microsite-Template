@@ -1,0 +1,75 @@
+[
+  {
+    "label": "Section ID (anchor)",
+    "name": "section_id",
+    "type": "text",
+    "default": ""
+  },
+  {
+    "label": "Eyebrow",
+    "name": "eyebrow",
+    "type": "text",
+    "default": "Life on Site"
+  },
+  {
+    "label": "Heading",
+    "name": "heading",
+    "type": "text",
+    "default": "Community Code of Conduct"
+  },
+  {
+    "label": "Intro text",
+    "name": "intro",
+    "type": "richtext",
+    "enabled_features": ["standard_emphasis"],
+    "default": "<p>At Caprock, we're committed to fostering a community where every guest feels respected, safe, and at home. Our Community Guidelines reflect the shared values that make that possible: care for one another, care for our shared spaces, and a spirit of cooperation throughout your stay.</p>"
+  },
+  {
+    "label": "Accordion items",
+    "name": "items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 5,
+      "sorting_label_field": "items.title"
+    },
+    "children": [
+      {
+        "label": "Label",
+        "name": "title",
+        "type": "text",
+        "default": "Accordion item"
+      },
+      {
+        "label": "Body",
+        "name": "content",
+        "type": "richtext",
+        "enabled_features": ["standard_emphasis", "lists"],
+        "default": "<ul><li>Item detail.</li></ul>"
+      }
+    ],
+    "default": [
+      {
+        "title": "Respect & Behavior",
+        "content": "<ul><li>Occupants must behave in an orderly, respectful manner at all times.</li><li>Respect others' <strong>rights, safety, and privacy</strong> and avoid inappropriate conduct.</li></ul>"
+      },
+      {
+        "title": "Care for Community",
+        "content": "<ul><li>Keep all areas <strong>clean and well-maintained</strong>.</li><li>Treat facilities and property with care.</li></ul>"
+      },
+      {
+        "title": "Cooperation",
+        "content": "<ul><li>Follow directions and cooperate with <strong>management, security, and authorized staff</strong>.</li><li>Report any issues or concerns promptly to management.</li></ul>"
+      },
+      {
+        "title": "Zero Tolerance for Harassment & Discrimination",
+        "content": "<ul><li>Harassment or discrimination is strictly prohibited based on protected characteristics (race, gender, religion, disability, etc.).</li><li>All reports are investigated thoroughly.</li><li>Violators may face <strong>discipline up to removal from housing and employer notification</strong>.</li></ul>"
+      },
+      {
+        "title": "Protection Against Retaliation",
+        "content": "<ul><li>Individuals who report concerns or participate in investigations in good faith are <strong>protected from retaliation</strong>.</li></ul>"
+      }
+    ]
+  }
+]

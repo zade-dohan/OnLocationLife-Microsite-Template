@@ -1,0 +1,74 @@
+<!--
+templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}"{{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}" />{% endif %}
+
+  <meta property="og:title" content="{{ page_meta.html_title }}" />
+  {% if page_meta.meta_description %}<meta property="og:description" content="{{ page_meta.meta_description }}" />{% endif %}
+  <meta property="og:type" content="website" />
+
+  {% if brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />{% endif %}
+
+  {{ require_css(get_asset_url('../css/theme.css')) }}
+
+  {# Theme settings (Brand/Typography/Buttons/Layout) become CSS custom
+     properties here so theme.css and every module can consume them via
+     var(--token). Values default to the original Caprock design. #}
+  <style>
+    :root {
+      --gold: {{ theme.brand.accent_color.color }};
+      --evergreen: {{ theme.brand.secondary_color.color }};
+      --black: {{ theme.brand.dark_bg.color }};
+      --ashGray: {{ theme.brand.alt_bg.color }};
+      --white: {{ theme.brand.default_light_text.color }};
+      --lightGray: {{ theme.brand.default_text.color }};
+
+      --font-empera: "{{ theme.typography.heading_font }}", Georgia, serif;
+      --font-gelica: "{{ theme.typography.accent_font }}", Georgia, serif;
+      --font-gotham: "{{ theme.typography.body_font }}", system-ui, Arial, sans-serif;
+      --bodySize: {{ theme.typography.base_body_size }}px;
+
+      --btn-primary-bg: {{ theme.buttons.primary_bg.color }};
+      --btn-primary-text: {{ theme.buttons.primary_text.color }};
+      --btn-secondary-color: {{ theme.buttons.secondary_color.color }};
+      --btn-hover-accent: {{ theme.buttons.hover_accent.color }};
+      --btn-radius: {{ theme.buttons.border_radius }}px;
+
+      --maxWidth: {{ theme.layout.max_width }}px;
+    }
+
+    @media only screen and (min-width: 64rem) {
+      :root {
+        --sectionPadding: {{ theme.layout.section_spacing }}px var(--gutter);
+      }
+    }
+
+    @media only screen and (max-width: 63.9375rem) {
+      :root {
+        --sectionPadding: {{ theme.layout.mobile_section_spacing }}px var(--gutter);
+      }
+    }
+  </style>
+
+  {{ standard_header_includes }}
+</head>
+<body class="cap-page {{ body_css }}">
+
+  {% module "header", path="../modules/header.module" %}
+
+  <main id="main">
+    {% block body %}{% endblock %}
+  </main>
+
+  {% module "footer", path="../modules/footer.module" %}
+
+  {{ require_js(get_asset_url('../js/theme.js')) }}
+  {{ standard_footer_includes }}
+</body>
+</html>
