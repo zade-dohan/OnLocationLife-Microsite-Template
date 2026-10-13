@@ -25,6 +25,40 @@
     "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>"
   },
   {
+    "label": "Side image",
+    "name": "side_image",
+    "type": "image",
+    "default": { "src": "", "alt": "", "loading": "lazy" }
+  },
+  {
+    "label": "Show accordion dropdowns",
+    "name": "show_dropdowns",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "label": "CTA label",
+    "name": "cta_label",
+    "type": "text",
+    "default": "Learn More",
+    "visibility": {
+      "controlling_field": "show_dropdowns",
+      "controlling_value_regex": "false",
+      "operator": "EQUAL"
+    }
+  },
+  {
+    "label": "CTA link (URL or #anchor)",
+    "name": "cta_link",
+    "type": "text",
+    "default": "",
+    "visibility": {
+      "controlling_field": "show_dropdowns",
+      "controlling_value_regex": "false",
+      "operator": "EQUAL"
+    }
+  },
+  {
     "label": "Accordion items",
     "name": "items",
     "type": "group",
@@ -33,6 +67,11 @@
       "max": 10,
       "default": 5,
       "sorting_label_field": "items.title"
+    },
+    "visibility": {
+      "controlling_field": "show_dropdowns",
+      "controlling_value_regex": "true",
+      "operator": "EQUAL"
     },
     "children": [
       {

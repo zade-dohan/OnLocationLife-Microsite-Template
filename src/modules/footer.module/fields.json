@@ -117,5 +117,17 @@
     "name": "copyright_text",
     "type": "text",
     "default": "\u00a9 2026 Your Company. All rights reserved."
+  },
+  {
+    "label": "Privacy policy link",
+    "name": "privacy_policy_link",
+    "type": "text",
+    "default": "https://www.aramark.com/privacy-policy"
+  },
+  {
+    "label": "Privacy policy label",
+    "name": "privacy_policy_label",
+    "type": "text",
+    "default": "Privacy Policy"
   }
 ]

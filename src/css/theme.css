@@ -1126,6 +1126,23 @@ body.cs-open {
     letter-spacing: 0.05em;
     color: var(--lightGray);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+}
+
+.ms-footer-privacy {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    transition: color 0.2s ease;
+}
+
+.ms-footer-privacy:hover,
+.ms-footer-privacy:focus-visible {
+    color: var(--gold);
 }
 
 @media only screen and (min-width: 48rem) {
@@ -1136,6 +1153,8 @@ body.cs-open {
     }
 
     .ms-footer-base {
+    flex-direction: row;
+    justify-content: flex-start;
     text-align: left;
     }
 }
@@ -1143,12 +1162,40 @@ body.cs-open {
 /* ====================================================
     COMMUNITY CODE OF CONDUCT -- ACCORDION
 ==================================================== */
+.ms-conduct-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.ms-conduct-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+    display: block;
+}
+
+@media (min-width: 64rem) {
+    .ms-conduct-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+}
+
 .ms-conduct .ms-section-head {
     max-width: 52rem;
 }
 
 .ms-accordion {
     border-top: 1px solid rgba(207, 183, 153, 0.2);
+}
+
+.ms-accordion-cta {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
 }
 
 .ms-accordion-item {

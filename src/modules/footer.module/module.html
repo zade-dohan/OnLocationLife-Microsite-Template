@@ -72,5 +72,8 @@
 
   <div class="ms-footer-base">
     <span>{{ module.copyright_text }}</span>
+    {% if module.privacy_policy_link %}
+      <a class="ms-footer-privacy" href="{{ module.privacy_policy_link|escape_attr }}" target="_blank" rel="noopener noreferrer">{{ module.privacy_policy_label }}</a>
+    {% endif %}
   </div>
 </footer>

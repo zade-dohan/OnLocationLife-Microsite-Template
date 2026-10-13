@@ -1,25 +1,44 @@
 <section{% if module.section_id %} id="{{ module.section_id|escape_attr }}"{% endif %} class="ms-section ms-section--dark ms-conduct">
-  <div class="ms-container">
-    <header class="ms-section-head">
-      {% if module.eyebrow %}<span class="ms-eyebrow">{{ module.eyebrow }}</span>{% endif %}
-      <span class="ms-rule"></span>
-      <h2 class="ms-h2">{{ module.heading }}</h2>
-      {% if module.intro %}<div class="ms-section-intro">{{ module.intro|sanitize_html }}</div>{% endif %}
-    </header>
+  <div class="ms-container ms-conduct-grid">
+    <div class="ms-conduct-body">
+      <header class="ms-section-head">
+        {% if module.eyebrow %}<span class="ms-eyebrow">{{ module.eyebrow }}</span>{% endif %}
+        <span class="ms-rule"></span>
+        <h2 class="ms-h2">{{ module.heading }}</h2>
+        {% if module.intro %}<div class="ms-section-intro">{{ module.intro|sanitize_html }}</div>{% endif %}
+      </header>
 
-    <div class="ms-accordion">
-      {% for item in module.items %}
-        {% set panel_id = "conduct-" ~ module_id ~ "-" ~ loop.index %}
-        <div class="ms-accordion-item">
-          <button class="ms-accordion-trigger" aria-expanded="false" aria-controls="{{ panel_id }}" type="button">
-            <span class="ms-accordion-label">{{ item.title }}</span>
-            <span class="ms-accordion-icon" aria-hidden="true"></span>
-          </button>
-          <div class="ms-accordion-panel" id="{{ panel_id }}">
-            {{ item.content|sanitize_html }}
-          </div>
+      {% if module.show_dropdowns %}
+        <div class="ms-accordion">
+          {% for item in module.items %}
+            {% set panel_id = "conduct-" ~ module_id ~ "-" ~ loop.index %}
+            <div class="ms-accordion-item">
+              <button class="ms-accordion-trigger" aria-expanded="false" aria-controls="{{ panel_id }}" type="button">
+                <span class="ms-accordion-label">{{ item.title }}</span>
+                <span class="ms-accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="ms-accordion-panel" id="{{ panel_id }}">
+                {{ item.content|sanitize_html }}
+              </div>
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+      {% elif module.cta_label %}
+        <div class="ms-accordion-cta">
+          <a href="{{ module.cta_link|escape_attr }}" class="ms-btn">{{ module.cta_label }}</a>
+        </div>
+      {% endif %}
     </div>
+
+    {% if module.side_image.src %}
+      <div class="ms-conduct-media">
+        <img
+          src="{{ module.side_image.src|escape_url }}"
+          alt="{{ module.side_image.alt|escape_attr }}"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    {% endif %}
   </div>
 </section>
