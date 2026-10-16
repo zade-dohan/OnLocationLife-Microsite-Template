@@ -14,6 +14,11 @@ templateType: none
   {% if page_meta.meta_description %}<meta property="og:description" content="{{ page_meta.meta_description }}" />{% endif %}
   <meta property="og:type" content="website" />
 
+  {# Per-theme site icons: swap these files in ../images/favicon/ when cloning this theme for a new microsite. #}
+  <link rel="icon" href="{{ get_asset_url('../images/favicon/favicon.ico') }}" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ get_asset_url('../images/favicon/favicon-32x32.png') }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ get_asset_url('../images/favicon/favicon-16x16.png') }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_asset_url('../images/favicon/apple-touch-icon.png') }}" />
   {% if brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />{% endif %}
 
   {{ require_css(get_asset_url('../css/theme.css')) }}
