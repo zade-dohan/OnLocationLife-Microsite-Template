@@ -14,8 +14,7 @@ templateType: none
   {% if page_meta.meta_description %}<meta property="og:description" content="{{ page_meta.meta_description }}" />{% endif %}
   <meta property="og:type" content="website" />
 
-  {# Per-theme site icons: swap these files in ../images/favicon/ when cloning this theme for a new microsite. #}
-  <link rel="icon" href="{{ get_asset_url('../images/favicon/favicon.ico') }}" sizes="any" />
+  {# Per-theme site icons: swap these PNGs in ../images/favicon/ when cloning this theme for a new microsite. .ico is NOT used -- hs cms upload silently drops .ico files, so PNG covers all modern browsers. #}
   <link rel="icon" type="image/png" sizes="32x32" href="{{ get_asset_url('../images/favicon/favicon-32x32.png') }}" />
   <link rel="icon" type="image/png" sizes="16x16" href="{{ get_asset_url('../images/favicon/favicon-16x16.png') }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ get_asset_url('../images/favicon/apple-touch-icon.png') }}" />
